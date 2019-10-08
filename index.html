@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
+		<link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.css">
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<link rel="stylesheet" type="text/css" href="assets/fonts/stylesheet.css">
+		<title>PizzaMania</title>
+	</head>
+	<body>
+		
+		<header>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-9">
+						<div class="header_items">
+							<div>
+								<img src="assets/img/logo.png">
+							</div>
+							<div class="delivery_time">
+								<h5 class="mb-1">Бесплатная доставка</h5>
+								<h6>с 10:00 до 22:30</h6>
+							</div>
+							<a href="" class="item-tel d-flex align-items-center justify-content-end">
+								<img src="">
+								<p>7558</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<nav>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-9">
+						<div class="h-100 d-flex align-items-center justify-content-between">
+							<a href="">Пиццы</a>
+							<a href="">Обеденное меню</a>
+							<a href="">Салаты</a>
+							<a href="">Закуски</a>
+							<a href="">Супы</a>
+							<a href="">Второе</a>
+							<a href="">Хлеб</a>
+							<a href="">Десерты</a>
+							<a href="">Напитки</a>
+							<a href="">О нас</a>
+						</div>
+					</div>
+					<div class="col-lg-3 d-flex justify-content-end align-items-center">
+						<a id="basket" class="btn btn_basket">Корзина</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+
+		<section id="akcia_slider">
+			<div class="container">
+				<div class="row">
+					<div class="col-12 akica_slider-container">
+						<img class="img-fluid mx-2" src="assets/img/akcia_slider/banner.png">
+						<img class="img-fluid mx-2" src="assets/img/akcia_slider/banner.png">
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section id="pizza">
+			<div class="container">
+				<div class="row">
+					<article class="col-lg-3 product_container">
+						<img class="img-fluid" src="assets/img/pizza_img.png">
+						<div class="product_text-container mt-4">
+							<h4>Барбекю</h3>
+							<p>Свинина маринованная, моцарелла, соус Барбекю, карамельный лук, томатный соус, перец маринованный, чесночное масло, орегано</p>
+							<div class="product_price-container d-flex justify-content-between align-items-center">
+								<h6>14,40 руб</h5>
+								<a href="" class="btn btn-primary" data-toggle="modal" data-target="#choseModal">В корзину</a>
+							</div>
+						</div>
+					</article>
+
+					<div class="modal fade" id="choseModal" tabindex="-1" role="dialog" aria-labelledby="choseModalLabel" aria-hidden="true">
+					  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+					    <div class="modal-content">
+					      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					        <i data-testid="popup__dialog-close" class="svg-icon styled__CloseButtonPopup-sc-1wiauej-0 hDxvIa">
+					        	<svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+											<path fill-rule="evenodd" clip-rule="evenodd" d="M9.84606 12.4986L0.552631 3.20519C-0.1806 2.47196 -0.1806 1.28315 0.552631 0.549923C1.28586 -0.183308 2.47466 -0.183308 3.20789 0.549923L12.5013 9.84335L21.792 0.552631C22.5253 -0.1806 23.7141 -0.1806 24.4473 0.552631C25.1805 1.28586 25.1805 2.47466 24.4473 3.20789L15.1566 12.4986L24.45 21.792C25.1832 22.5253 25.1832 23.7141 24.45 24.4473C23.7168 25.1805 22.528 25.1805 21.7947 24.4473L12.5013 15.1539L3.20519 24.45C2.47196 25.1832 1.28315 25.1832 0.549923 24.45C-0.183308 23.7168 -0.183308 22.528 0.549923 21.7947L9.84606 12.4986Z" fill="white"></path>
+										</svg>
+									</i>
+					      </button>
+					      <div class="modal-body">
+					        <div class="container">
+					        	<div class="row">
+					        		<div class="col-lg-6 d-flex align-items-center justify-content-center">
+					        			<img class="img-fluid" src="assets/img/pizza_img.png">
+					        		</div>
+					        		<div class="col-lg-6">
+												<h5 class="d-flex align-items-center">Барбекю<span class="menu_info" data-container="body" data-toggle="popover" data-placement="bottom" href="" title="" data-html="true">?</span></h5>	
+												<span class="food_properties">30 см, 610 г</span>
+												<p>Свинина маринованная, моцарелла, соус Барбекю, карамельный лук, томатный соус, перец маринованный, чесночное масло, орегано</p>
+												<div class="modal-footer d-flex justify-content-between align-items-center">
+													<h6>14,40 руб</h6>
+													<a href="" class="btn btn-primary" data-toggle="modal" data-target="#choseModal">В корзину</a>	
+									      </div>
+					        		</div>
+					        	</div>
+					        </div>
+					      </div>
+					    </div>
+					  </div>
+					</div>
+
+					<article class="col-lg-3 product_container">
+						<img class="img-fluid" src="assets/img/pizza_img.png">
+						<div class="product_text-container mt-4">
+							<h4>Барбекю</h3>
+							<p>Свинина маринованная, моцарелла, соус Барбекю, карамельный лук, томатный соус, перец маринованный, чесночное масло, орегано</p>
+							<div class="product_price-container d-flex justify-content-between align-items-center">
+								<h6>14,40 руб</h5>
+								<a href="" class="btn btn-primary">В корзину</a>
+							</div>
+						</div>
+					</article>
+					<article class="col-lg-3 product_container">
+						<img class="img-fluid" src="assets/img/pizza_img.png">
+						<div class="product_text-container mt-4">
+							<h4>Барбекю</h3>
+							<p>Свинина маринованная, моцарелла, соус Барбекю, карамельный лук, томатный соус, перец маринованный, чесночное масло, орегано</p>
+							<div class="product_price-container d-flex justify-content-between align-items-center">
+								<h6>14,40 руб</h5>
+								<a href="" class="btn btn-primary">В корзину</a>
+							</div>
+						</div>
+					</article>
+					<article class="col-lg-3 product_container">
+						<img class="img-fluid" src="assets/img/pizza_img.png">
+						<div class="product_text-container mt-4">
+							<h4>Барбекю</h3>
+							<p>Свинина маринованная, моцарелла, соус Барбекю, карамельный лук, томатный соус, перец маринованный, чесночное масло, орегано</p>
+							<div class="product_price-container d-flex justify-content-between align-items-center">
+								<h6>14,40 руб</h5>
+								<a href="" class="btn btn-primary">В корзину</a>
+							</div>
+						</div>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section id="lunch_menu">
+			<div class="container">
+				<h1 class="section_title">Конструктор обеденного меню</h1>
+				<div class="row">
+					<div class="col-lg-3">
+						<img class="w-100" src="assets/img/lunch_menu/first_second.png">
+						<div class="d-flex justify-content-between align-items-center">
+							<img class="lunch_menu-dop" src="assets/img/lunch_menu/salads.png">
+							<img class="lunch_menu-dop" src="assets/img/lunch_menu/sup.png">
+						</div>
+						<div class="d-flex align-items-center justify-content-between mb-4">
+							<h6>Вес: 0 гр</h6>
+							<h6>пищевая ценность</h6>
+						</div>
+						<p class="mb-4">Вы не выбрали обязательное блюдо для комплекта — гарнир, горячее.</p>
+						<div class="product_price-container d-flex justify-content-between align-items-center">
+							<h6>14,40 руб</h5>
+							<a href="" class="btn btn-primary">В корзину</a>
+						</div>
+					</div>
+					<div class="col-lg-9">
+						<h2 class="mb-4">Выберите гарнир</h2>
+						<div class="container">
+							<div class="row">
+								<div class="col-lg-4">
+									<article class="lunch_menu-card">
+										<img src="assets/img/lunch_menu/first/1.jpg">
+										<h5>Картофель жареный с грибами<span class="menu_info">?</span></h5>
+										<h6>32,8 руб</h6>
+									</article>
+								</div>
+								<div class="col-lg-4">
+									<article class="lunch_menu-card">
+										<img src="assets/img/lunch_menu/first/1.jpg">
+										<h5>Картофель жареный с грибами<span class="menu_info">?</span></h5>
+										<h6>32,8 руб</h6>
+									</article>
+								</div>
+								<div class="col-lg-4">
+									<article class="lunch_menu-card">
+										<img src="assets/img/lunch_menu/first/1.jpg">
+										<h5>Картофель жареный с грибами<span class="menu_info">?</span></h5>
+										<h6>32,8 руб</h6>
+									</article>
+								</div>
+								<div class="col-lg-3 mt-4 offset-lg-9 d-flex align-self-center justify-content-between">
+									<a href="" class="btn btn-primary">Назад</a>
+									<a href="" class="btn btn-primary">Далее</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="delivery">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-5">
+						<h1 class="section_title">Доставка и оплата</h1>
+						<div class="delivery_text-container">
+							<h6 class="mb-4">Наша зона доставки ограничена</h6>
+							<p>Внимание! С 07.11 зоны доставки изменены! Просьба уточнять у оператора при оформлении заказа! </p>
+						</div>
+						<div class="delivery_text-container">
+							<h6 class="mb-2">11,50 руб</h6>
+							<p class="mb-2">Минимальная сумма заказа.</p>
+							<p>Изображения продуктов могут отличаться от продуктов в заказе.</p>
+						</div>
+					</div>
+					<div class="col-lg-7" style="background-color: black;">
+						
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer>
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 footer_links-container">
+						<h4 class="footer_links-title">Полезные ссылки</h4>
+						<ul>
+							<li><a class="footer_link" href="">Программа лояльности</a></li>
+							<li><a class="footer_link" href="">О нас</a></li>
+							<li><a class="footer_link" href="">Вакансии</a></li>
+							<li><a class="footer_link" href="">Контакты</a></li>
+						</ul>
+					</div>
+					<div class="col-lg-4">
+						<img src="">
+					</div>
+					<div class="col-lg-2 offset-lg-2">
+						<div class="delivery_time">
+							<h5 class="mb-1">Бесплатная доставка</h5>
+							<h6>с 10:00 до 22:30</h6>
+						</div>
+						<a class="item-tel">
+							<img src="">
+							<p href="">7558</p>
+						</a>
+						<img class="dynamicov_logo" src="">
+					</div>
+					<div class="footer_info mx-auto text-center" style="max-width: 550px;">
+						<p>Мы не продаем алкогольную продукцию лицам младше 18 лет. Все цены в меню указаны без учета скидок. Скидки действуют только на продукцию собственного производства!</p>
+						<p class="pt-4">© 2013-2019 Все права защищены</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- <article class="basket_tooltip">
+			<div class="container">
+				<div class="tooltip_container">
+					<div class="row">
+						<div class="col-3"><img src=""></div>
+						<div class="col-lg-7">
+							<h3></h3>
+						</div>
+						<div class="col-lg-2">
+							<img src="">
+						</div>
+						<hr>
+						<div class="col-lg-12">
+							<div class="d-flex justify-content-between align-items-center">
+								<p>Сумма заказа</p>
+								<p>0.00 руб</p>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article> -->
+
+		<script type="text/javascript" src="vendor/jQuery/jquery.js"></script>
+		<!-- <script type="text/javascript" src="vendor/popper/popper.min.js"></script> -->
+		<script type="text/javascript" src='vendor/mask/jquery.maskedinput.min.js'></script>
+		<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.bundle.js"></script>
+		<script type="text/javascript" src="vendor/slick/slick.min.js"></script>
+		<script type="text/javascript" src="assets/js/main.js"></script>
+
+	</body>
+</html>
+
+div.container>(div.basket_item*3>div.row>div.col-3.basket_img+div.)+(div.basket_footer.container>)
+
+
+
+
+					<!--<div class="tooltip_content">
+						<h6>Пищевая ценность на 100г</h6>
+						<div class="tooltip_content-container">
+							<p>Энерг. ценность</p>
+							<p>214,3 ккал</p>
+						</div>
+						<div class="tooltip_content-container">
+							<p>Энерг. ценность</p>
+							<p>214,3 ккал</p>
+						</div>
+						<div class="tooltip_content-container">
+							<p>Энерг. ценность</p>
+							<p>214,3 ккал</p>
+						</div>
+						<div class="tooltip_content-container">
+							<p>Энерг. ценность</p>
+							<p>214,3 ккал</p>
+						</div>
+					</div>-->

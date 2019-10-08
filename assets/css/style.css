@@ -1,0 +1,290 @@
+a, h1, h2, h3, h4, h5, h6, p {
+	font-family: 'Rounded Mplus 1c';
+	padding: 0;
+	margin: 0;
+	color: #000000;
+}
+
+a:hover, a:focus {
+	color: inherit;
+	text-decoration: none;
+}
+
+ul {
+	padding: 0;
+}
+
+ul li {
+	list-style-type: none;
+}
+
+section {
+	padding: 35px 0;
+}
+
+.container {
+	max-width: 1280px;
+}
+
+.btn_basket {
+	border-radius: 10px;
+	background-color: #f05a23;
+	font-size: 14px;
+	font-weight: 500;
+	color: #ffffff;
+	padding: 10px 20px;
+}
+
+.btn-primary {
+	border-radius: 10px;
+	border: 1px solid #f05a23;
+	padding: 5px 17px;
+	color: #f1602c;
+	font-size: 16px;
+	font-weight: 500;
+	background-color: transparent;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+	background-color: #f05a23;
+	color: white;
+	border: 1px solid #f05a23;
+}
+
+.section_title {
+	font-size: 36px;
+	font-weight: 700;
+	margin-bottom: 50px;
+} 
+
+.item-tel p {
+	color: #f05a23;
+	font-size: 30px;
+	font-weight: 700;
+}
+
+.delivery_time h5 {
+	font-size: 17px;
+	font-weight: 500;
+}
+
+.delivery_time h6 {
+	font-size: 16px;
+	font-weight: 400
+}
+
+.menu_info {
+	border: 1px solid #a2a2a2;
+	width: 18px;
+	height: 18px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: #a2a2a2;
+	border-radius: 50%;
+	font-size: 10px;
+	font-weight: 700;
+	margin-left: 8px;
+	margin-top: 4px;
+	cursor: pointer;
+}
+
+.menu_info:hover, .menu_info:focus, .menu_info:active {
+	color: white;
+	background-color: #a2a2a2;
+}
+
+/*tooltip styles*/
+.tooltip_content {
+	padding: 10px;
+	color: #fff;
+  font-size: 14px; 
+}
+
+.tooltip_content-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 4px 0;
+}
+
+/*PRODUCT_CONTAINER STYLES*/
+.product_text-container p {
+	padding-top: 19px;
+	padding-bottom: 30px;
+	font-size: 14px;
+	color: #7e7e7e;
+}
+
+header {
+	padding: 30px 0;
+}
+
+.header_items {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-right: auto;
+}
+	
+.header_items > div {
+	width: 33%;
+}
+
+.header_items img{
+	width: 95%;
+	height: auto;
+	margin-right: auto;
+}
+
+/*akcia slider*/ 
+#akcia_slider .slick-prev, .slick-next {
+	width: 24px;
+	height: 41px;
+}
+
+.akica_slider-container img {
+	border-radius: 10px;
+}
+
+.slick-prev:before, .slick-next:before {
+	content: url(../img/akcia_slider/arrow.png);
+	display: block;
+	width: 24px;
+	height: 41px;
+	opacity: 0.4;
+}
+
+.slick-prev:before {
+	transform: rotate(180deg);
+}
+
+/*lunch_menu section*/
+.lunch_menu-card {
+	padding: 25px;
+	border: 2px solid #eaeced;
+	border-radius: 15px; 
+}
+
+.lunch_menu-card img {
+	width: 100%;
+	height: auto;
+}
+
+.lunch_menu-dop {
+	width: 45%;
+	margin-top: 26px;
+	margin-bottom: 40px;
+}
+
+.lunch_menu-card h5 {
+	margin: 35px 0 30px 0;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.lunch_menu-card h6 {
+	font-weight: 700;
+}
+
+/*Delivery*/
+#delivery .delivery_text-container:nth-child(even) {
+	padding-bottom: 39px;
+}
+
+.delivery_text-container h6 {
+	font-size: 18px;
+	color: #f15d27;
+}
+
+.delivery_text-container p {
+	font-size: 14px;
+	font-weight: 400;
+}
+
+/*footer*/
+footer {
+	background-color: #1f1f1f;
+	padding-top: 60px;
+	padding-bottom: 25px; 
+}
+
+footer * {
+	color: #fff;
+}
+
+.footer_links-title {
+	font-size: 24px;
+	font-weight: 700;
+	color: #f05a23;
+	margin-bottom: 24px;
+	letter-spacing: 0.24px;
+}
+
+.footer_link {
+	padding: 7px 0;
+	font-size: 16px;
+	font-weight: 500;
+	letter-spacing: 0.16px;
+}
+
+.footer_link:hover, .footer_link:focus {
+	color: #f05a23;
+}
+
+.footer_info {
+	margin-top: 90px;
+}
+
+.footer_info * {
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 12px;
+	font-weight: 400;
+}
+
+/*modal styles*/
+.modal-content {
+	border-radius: 20px;
+	box-shadow: 0 30px 60px rgba(0,0,0,.2);
+	position: relative;
+	padding: 20px;
+}
+
+.modal-content button.close {
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	top: 5px;
+	right: -35px;
+}
+
+.modal-header, .modal-footer {
+	border: none;
+}
+
+.modal-content .food_properties {
+	color: rgb(135, 134, 134);
+   font-size: 15px;
+   line-height: 1.375;
+   text-transform: lowercase;
+   display: block;
+   padding: 5px 0; 
+}
+
+.modal-content p {
+	font-size: 15px;
+}
+
+.modal-footer {
+	padding: 0; 
+}
+
+.modal-body .col-lg-6 {
+	position: relative;
+}
+
+.modal-body .col-lg-6 .modal-footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
