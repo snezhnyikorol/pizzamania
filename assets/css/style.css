@@ -387,3 +387,8 @@ footer * {
 	color: #ff6900;
 	margin-top: 15px;
 }
+
+/*about page*/
+.about_container .section_title {
+	font-size: 3.25rem;
+}
