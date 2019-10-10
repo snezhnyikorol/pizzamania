@@ -377,3 +377,108 @@ footer * {
 	width: 100%;
 	height: auto;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*actions page*/
+.action_container img {
+	border-radius: 8px;
+}
+
+.action_container h5 {
+	margin: 7px 0;
+}
+
+.action_container p {
+	color: #878686;
+}
+
+.action_container span {
+	border-bottom: 1px dashed rgba(255,105,0,.2);
+	color: #ff6900;
+	margin-top: 15px;
+}
+
+/*about page*/
+.about_container .section_title {
+	font-size: 3.25rem;
+}
