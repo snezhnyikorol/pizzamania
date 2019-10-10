@@ -52,7 +52,7 @@
 						</div>
 					</div>
 					<div class="col-lg-3 d-flex justify-content-end align-items-center">
-						<a id="basket" class="btn btn_basket">Корзина</a>
+						<a href="" id="basket" class="btn btn_basket">Корзина</a>
 					</div>
 				</div>
 			</div>
@@ -102,15 +102,20 @@
 					        		<div class="col-lg-6 d-flex align-items-center justify-content-center">
 					        			<img class="img-fluid" src="assets/img/pizza_img.png">
 					        		</div>
-					        		<div class="col-lg-6">
-												<h5 class="d-flex align-items-center">Барбекю<span class="menu_info" data-container="body" data-toggle="popover" data-placement="bottom" href="" title="" data-html="true">?</span></h5>	
+					        		<form class="col-lg-6">
+												<h5 class="d-flex align-items-center modal_title"><input name="food_name" type="text" value="Барбекю" readonly><span class="menu_info" data-container="body" data-toggle="popover" data-placement="bottom" href="" title="" data-html="true">?</span></h5>	
 												<span class="food_properties">30 см, 610 г</span>
 												<p>Свинина маринованная, моцарелла, соус Барбекю, карамельный лук, томатный соус, перец маринованный, чесночное масло, орегано</p>
+												<div class="sizes">
+													<div class="size_indicator"></div>
+													<div class="size_item"><input type="radio" id="size_1" value="1" name="size" checked><label for="size_1">30 сантиметров</label></div>
+													<div class="size_item"><input type="radio" id="size_2" value="2" name="size"><label for="size_2">1 метр</label></div>
+												</div>
 												<div class="modal-footer d-flex justify-content-between align-items-center">
 													<h6>14,40 руб</h6>
-													<a href="" class="btn btn-primary" data-toggle="modal" data-target="#choseModal">В корзину</a>	
-									      </div>
-					        		</div>
+													<a href="" class="btn btn-primary" id="modal_accept">В корзину</a>	
+												</div>
+					        		</form>
 					        	</div>
 					        </div>
 					      </div>
@@ -300,8 +305,66 @@
 	</body>
 </html>
 
-div.container>(div.basket_item*3>div.row>div.col-3.basket_img+div.)+(div.basket_footer.container>)
-
+<!-- <div class="container popover">
+	<div class="arrow"></div>
+	<div class="basket_item">
+	  <div class="row">
+		<div class="col-3 basket_img">
+			<img src="./assets/img/pizza_img.png" alt="" class="img_fluid">
+		</div>
+		<div class="col-9 basket_content container">
+		  <div class="row">
+			<div class="col-10">
+			  <h3 class="basket_title">1</h3>
+			  <h5 class="basket_subtitle">2</h5>
+			</div>
+			<div class="col-12"></div>
+		  </div>
+		  <div class="row"></div>
+		</div>
+	  </div>
+	</div>
+	<div class="basket_item">
+	  <div class="row">
+		<div class="col-3 basket_img">
+			<img src="./assets/img/pizza_img.png" alt="" class="img_fluid">
+		</div>
+		<div class="col-9 basket_content container">
+		  <div class="row">
+			<div class="col-10">
+			  <h3 class="basket_title">1</h3>
+			  <h5 class="basket_subtitle">2</h5>
+			</div>
+			<div class="col-12"></div>
+		  </div>
+		  <div class="row"></div>
+		</div>
+	  </div>
+	</div>
+	<div class="basket_item">
+	  <div class="row">
+		<div class="col-3 basket_img">
+			<img src="./assets/img/pizza_img.png" alt="" class="img_fluid">
+		</div>
+		<div class="col-9 basket_content container">
+		  <div class="row">
+			<div class="col-10">
+			  <h3 class="basket_title">1</h3>
+			  <h5 class="basket_subtitle">2</h5>
+			</div>
+			<div class="col-12"></div>
+		  </div>
+		  <div class="row"></div>
+		</div>
+	  </div>
+	</div>
+	<div class="basket_footer">
+	  <div class="row">
+		<div class="col-6">Сумма заказа</div>
+		<div class="col-6">2,00 руб.</div>
+	  </div>
+	</div>
+	</div> -->
 
 
 

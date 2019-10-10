@@ -33,47 +33,70 @@ $('.akica_slider-container').slick({
 //   container: 'body'
 // })
 
-let basketTemplate = `			<div class="container">
-<div class="tooltip_container">
+let basketTemplate = `<div class="container popover">
+<div class="arrow"></div>
+<div class="basket_item">
   <div class="row">
-    <div class="col-3"><img src=""></div>
-    <div class="col-lg-7">
-      <h3></h3>
+  <div class="col-4 basket_img">
+    <img src="./assets/img/pizza_img.png" alt="">
+  </div>
+  <div class="col-8 basket_content container">
+    <div class="row">
+    <div class="col-10">
+      <h3 class="basket_title">Барбекю</h3>
+      <h5 class="basket_subtitle">Традиционное, 32 см</h5>
     </div>
-    <div class="col-lg-2">
-      <img src="">
+    <div class="col-12"></div>
     </div>
-    <hr>
-    <div class="col-lg-12">
-      <div class="d-flex justify-content-between align-items-center">
-        <p>Сумма заказа</p>
-        <p>0.00 руб</p>	
-      </div>
+    <div class="row"></div>
+  </div>
+  </div>
+</div>
+<div class="basket_item">
+  <div class="row">
+  <div class="col-4 basket_img">
+    <img src="./assets/img/pizza_img.png" alt="">
+  </div>
+  <div class="col-8 basket_content container">
+    <div class="row">
+    <div class="col-10">
+      <h3 class="basket_title">Барбекю</h3>
+      <h5 class="basket_subtitle">Традиционное, 32 см</h5>
     </div>
+    <div class="col-12"></div>
+    </div>
+    <div class="row"></div>
+  </div>
+  </div>
+</div>
+<div class="basket_item">
+  <div class="row">
+  <div class="col-4 basket_img">
+    <img src="./assets/img/pizza_img.png" alt="">
+  </div>
+  <div class="col-8 basket_content container">
+    <div class="row">
+    <div class="col-10">
+      <h3 class="basket_title">Барбекю</h3>
+      <h5 class="basket_subtitle">Традиционное, 32 см</h5>
+    </div>
+    <div class="col-12"></div>
+    </div>
+    <div class="row"></div>
+  </div>
+  </div>
+</div>
+<div class="basket_footer">
+  <div class="row">
+  <div class="col-6">Сумма заказа</div>
+  <div class="col-6 text-right">2,00 руб.</div>
   </div>
 </div>
 </div>`
 
-let basketTemplate2 =  `			<div class="container">
-<div class="tooltip_container">
-  <div class="row">
-    <div class="col-3"><img src=""></div>
-    <div class="col-lg-7">
-      <h3></h3>
-    </div>
-    <div class="col-lg-2">
-      <img src="">
-    </div>
-    <hr>
-    <div class="col-lg-12">
-      <div class="d-flex justify-content-between align-items-center">
-        <p>Сумма заказа</p>
-        <p>20.00 руб</p>	
-      </div>
-    </div>
-  </div>
-</div>
-</div>`
+function addBasketItem(name, size) {
+   
+}
 
 $('#basket').popover({
   container: 'body',
@@ -81,18 +104,23 @@ $('#basket').popover({
   placement: 'bottom',
   title: 'hello',
   trigger: 'hover',
-  template: basketTemplate
+  template: basketTemplate,
+  boundary: document.getElementById('akcia_slider').children[0]
 })
 
-$('#basket').popover('dispose')
-
-$('#basket').popover({
-  container: 'body',
-  content: 'hellooooooooooooo',
-  placement: 'bottom',
-  title: 'hello',
-  trigger: 'hover',
-  template: basketTemplate2
-})
 
 // data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="hello"
+
+$("input[name='size']").change(function() {
+  if ($(this).val() == 2) {
+    $('.size_indicator').css('margin-left', 'calc(50% + 1px)')
+  } else {
+    $('.size_indicator').css('margin-left', 'calc(0% + 1px)')
+  }
+})
+
+$('#modal_accept').on('click', function (e) {
+  e.preventDefault();
+  let food = $("input[name='food_name']").val();
+  let size = $("input:checked[name='size']").val();
+})

@@ -271,6 +271,14 @@ footer * {
    padding: 5px 0; 
 }
 
+.modal_title input {
+	border: none;
+}
+
+.modal_title input:focus {
+	outline: none;
+}
+
 .modal-content p {
 	font-size: 15px;
 }
@@ -287,4 +295,85 @@ footer * {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
+	border-radius: 8px;
+}
+
+.sizes {
+	display: flex;
+	background-color: rgb(241, 242, 245);
+	border-radius: 8px;
+	position: relative;
+	overflow: hidden;
+	z-index: 0;
+}
+
+.size_item {
+	width: 50%;
+}
+
+.size_item label {
+	width: 100%;
+	text-align: center;
+	padding: 5px 0;
+	margin-bottom: 0;
+	z-index: 2;
+	position: relative;
+	color: rgb(111, 110, 111);
+}
+
+.size_item label:hover, .size_item input:checked + label {
+	color: rgb(55, 53, 53)
+}
+
+.size_item input[type="radio"] {
+	display: none;
+}
+
+.size_indicator {
+	position: absolute;
+    top: 0px;
+    left: 0px;
+    transform: translateX(0px);
+    height: calc(100% - 2px);
+    margin-top: 1px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(6, 5, 50, 0.19) 0px 10px 20px;
+    width: calc(50% - 2px);
+    margin-left: calc(0% + 1px);
+    transition: margin-left 0.2s ease-out 0s;
+	border-radius: 8px;
+	z-index: 1;
+}
+
+/* basket */
+
+.container.popover {
+	max-width: 350px;
+	border: none;
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 25px;
+	padding: 30px;
+}
+
+.basket_item {
+	margin: 10px 0;
+}
+
+.basket_title {
+	font-size: 16px;
+}
+
+.basket_subtitle {
+	font-size: 14px;
+	opacity: 0.5;
+}
+
+.basket_footer {
+	font-size: 16px;
+	border-top: 1px solid rgba(0, 0, 0, 0.15);
+	padding-top: 10px;
+}
+
+.basket_img img {
+	width: 100%;
+	height: auto;
 }
