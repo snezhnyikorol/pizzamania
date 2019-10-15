@@ -482,3 +482,63 @@ footer * {
 .about_container .section_title {
 	font-size: 3.25rem;
 }
+
+/*cart page*/
+.cart .container {
+	max-width: 755px;
+}
+
+.promocode_input {
+  width: 180px;
+  height: 30px;
+  padding-top: 1px;
+  font-size: 14px;
+  line-height: 30px;
+  font-weight: 500;
+  border-color: #babfd0;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  box-shadow: none;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.promocode_button {
+    min-width: 96px;
+    padding: 3.6px 10px 4px;
+    font-size: 14px;
+    font-weight: 500;
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    color: #ff6900;
+    border: 1px solid #ff6900;
+    background-color: transparent;
+    position: relative;
+    margin-left: -5px;
+}
+
+.cart_list {
+	margin: 30px 0 24px;
+  padding: 15px 0;
+  border-top: 1px solid #e1e1e1;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.cart_price {
+  color: #373535;
+  text-align: right;
+}
+
+.cart__line-delete-icon {
+    display: inline-block;
+    text-decoration: none;
+    width: 22px;
+    height: 21px;
+    position: relative;
+    top: 3px;
+    right: 1px;
+    cursor: pointer;
+    background-image: url('https://dodopizza-a.akamaihd.net/site-static/dist/37d3a0f8ac3bd555b210.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
