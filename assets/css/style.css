@@ -556,3 +556,19 @@ footer * {
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.amount_container .amount_changer {
+	position: relative;
+	width: 30px;
+	height: 39px;
+  background: none;
+  cursor: pointer;
+  border: 1px solid #ff6900;
+  border-radius: 10px;
+}
+
+.amount_container .amount_changer span {
+	position: absolute;
+	top: calc(50% - 5px);
+	left: calc(50% - 5px);
+}
