@@ -171,6 +171,10 @@ header {
 	height: auto;
 }
 
+.lunch_menu-main {
+	margin: 0 3px;
+}
+
 .lunch_menu-dop {
 	width: 45%;
 	margin-top: 26px;
@@ -271,8 +275,18 @@ footer * {
    padding: 5px 0; 
 }
 
+.launch_view {
+	height: 410px;
+	overflow: hidden;
+}
+
+.launch_view .row {
+	margin-bottom: 10px;
+} 
+
 .modal_title input {
 	border: none;
+	font-weight: 500;
 }
 
 .modal_title input:focus {
