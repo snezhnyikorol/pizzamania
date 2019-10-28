@@ -557,6 +557,10 @@ footer * {
     background-size: cover;
 }
 
+.cart_souces {
+	margin-top: 40px;
+}
+
 .amount_container .amount_changer {
 	position: relative;
 	width: 30px;
@@ -569,6 +573,43 @@ footer * {
 
 .amount_container .amount_changer span {
 	position: absolute;
-	top: calc(50% - 5px);
+	top: 5px;
 	left: calc(50% - 5px);
+	color: #ff6900;
+	font-weight: 700;
+}
+
+.amount_container .amount_changer:first-child span {
+	left: calc(50% - 4px);
+}
+
+.cart_cost-container {
+	margin: 40px 0 30px;
+}
+
+.cart_cost {
+	font-weight: 700;
+}
+
+.cart_cost span {
+	color: #ff6900;
+	font-size: 1.7rem;
+}
+
+.cart_btn-container a {
+	min-width: 183px;
+	padding: 13px;
+	font-size: 16px;
+	font-weight: 500;
+}
+
+.cart_btn-container a:first-child {
+	color: #000;
+    border: 1px solid #babfd0;
+    background-color: transparent;
+}
+
+.cart_btn-container a:first-child:hover, .cart_btn-container a:first-child:active {
+	border: 1px solid #ff6900;
+	color: #ff6900;
 }
