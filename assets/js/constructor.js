@@ -12,20 +12,11 @@ function getPosition(param) {
     return(param.slice(6));
 }
 
-let pickedItem = '';
+// let pickedItem = '';
 
 $('#lunch_second').toggle();
 $('#lunch_salad').toggle();
 $('#lunch_soup').toggle();
-
-// $('.launch_view .row').click(function() {
-//     if ($(this).attr('id') != state) {
-//         $('#' + state).fadeToggle('fast');
-//         $(this).fadeToggle('fast');
-//         state = $(this).attr();
-//     }
-// })
-
 
 $('#first').click(function() {
     if (state != 1) {
@@ -33,7 +24,7 @@ $('#first').click(function() {
         $('#lunch_first').fadeToggle('fast');
         state = 1;
         $('.launch_view').css('height', $('#' + stateList[state]).outerHeight());
-        pickedItem = '';
+        // pickedItem = '';
     }
 })
 
@@ -43,7 +34,7 @@ $('#second').click(function() {
         $('#lunch_second').fadeToggle('fast');
         state = 2;
         $('.launch_view').css('height', $('#' + stateList[state]).outerHeight());
-        pickedItem = '';
+        // pickedItem = '';
     }
 })
 
@@ -53,7 +44,7 @@ $('#salad').click(function() {
         $('#lunch_salad').fadeToggle('fast');
         state = 3;
         $('.launch_view').css('height', $('#' + stateList[state]).outerHeight());
-        pickedItem = '';
+        // pickedItem = '';
     }
 })
 
@@ -63,27 +54,40 @@ $('#soup').click(function() {
         $('#lunch_soup').fadeToggle('fast');
         state = 4;
         $('.launch_view').css('height', $('#' + stateList[state]).outerHeight());
-        pickedItem = '';
+        // pickedItem = '';
     }
 })
 
 // item
 
 $('.lunch_menu-card').click(function() {
-    pickedItem = $(this).find('img').attr('src');
+    // pickedItem = $(this).find('img').attr('src');
+    // $('#' + getPosition(stateList[state])).attr('src', pickedItem.slice(0, -4) + '_' + '.jpg');
+    $('#' + getPosition(stateList[state])).attr('src', $(this).find('img').attr('src').slice(0, -4) + '_' + '.jpg');
 })
 
 $('.lunch_next').click(function(event) {
-    if (pickedItem != '') {
-        $('#' + getPosition(stateList[state])).attr('src', pickedItem.slice(0, -4) + '_' + '.jpg');
-        if (state < 5) {
+    // if (pickedItem != '') {
+        if (state < 4) {
             $('#' + stateList[state]).fadeToggle('fast');
             state++;
             $('#' + stateList[state]).fadeToggle('fast');
-            pickedItem = '';
+            // pickedItem = '';
             $('.launch_view').css('height', $('#' + stateList[state]).outerHeight());
         }
+    // }
+    event.preventDefault();
+})
+
+$('.lunch_prev').click(function(event) { 
+    if (state > 1) {
+        $('#' + stateList[state]).fadeToggle('fast');
+        state--;
+        $('#' + stateList[state]).fadeToggle('fast');
+        // pickedItem = '';
+        $('.launch_view').css('height', $('#' + stateList[state]).outerHeight());    
     }
+
     event.preventDefault();
 })
 
