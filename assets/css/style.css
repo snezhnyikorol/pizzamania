@@ -342,7 +342,7 @@ header {
 }
 
 .launch_view {
-	height: 410px;
+	/* height: 410px; */
 	overflow: hidden;
 }
 
@@ -569,9 +569,20 @@ footer * {
   }
 }
 
+@media (max-width: 768px){
+	/* .product_container {
+		position: relative;
+	}
 
+	.product_container .img-fluid {
+		position: absolute;
+    left: -12%;
+	}
 
-
+	.product_text-container {
+		padding-bottom: 50px;
+	} */
+}
 
 @media (max-width: 576px){
 	.substrate {
