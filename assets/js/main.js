@@ -1,12 +1,12 @@
 var $root = $('html, body');
 
-$('a[href^="#"]').click(function () {
-    $root.animate({
-        scrollTop: $( $.attr(this, 'href') ).offset().top - 100
-    }, 500);
+// $('a[href^="#"]').click(function () {
+//     $root.animate({
+//         scrollTop: $( $.attr(this, 'href') ).offset().top - 100
+//     }, 500);
 
-    return false;
-});
+//     return false;
+// });
 
 let menuState = false;
 
