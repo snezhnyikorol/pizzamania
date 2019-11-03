@@ -174,7 +174,7 @@
 			</div>
 		</article> -->
 
-		<div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
+		<div class="modal fade cart_modal" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			  <div class="modal-content">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -186,26 +186,68 @@
 				</button>
 				
 				<div class="modal-body">
-					<h1>Куда доставить?</h1>
-					<ul class="nav nav-tabs">
-					  <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-					  <li><a data-toggle="tab" href="#menu1">Menu 1</a></li>
-					  <li><a data-toggle="tab" href="#menu2">Menu 2</a></li>
-					</ul>
-
-					<div class="tab-content">
-					  <div id="home" class="tab-pane fade in active">
-					    <h3>HOME</h3>
-					    <p>Some content.</p>
+					<h1 class="pb-3">Куда доставить?</h1>
+					<nav>
+					  <div class="nav nav-tabs" id="nav-tab" role="tablist">
+					    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home">Доставка</a>
+					    <a class="nav-item nav-link ml-2" id="nav-profile-tab" data-toggle="tab" href="#nav-profile">Самовывоз</a>
 					  </div>
-					  <div id="menu1" class="tab-pane fade">
-					    <h3>Menu 1</h3>
-					    <p>Some content in menu 1.</p>
-					  </div>
-					  <div id="menu2" class="tab-pane fade">
-					    <h3>Menu 2</h3>
-					    <p>Some content in menu 2.</p>
-					  </div>
+					</nav>
+					<div class="tab-content" id="nav-tabContent">
+						<div class="container">
+							<div class="row">
+								<div class="tab fade show col-lg-8" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+						  		<div class="row">
+						  			<div class="col-lg-9 cart_modal-col">
+						  				<input class="cart_modal-input" type="text" name="" placeholder="ebu v rot">
+						  			</div>
+						  			<div class="col-lg-3 cart_modal-col">
+						  				<input class="cart_modal-input input_home" type="text" name="" placeholder="Дом">
+						  			</div>
+						  			<div class="col-lg-3 cart_modal-col">
+						  				<input class="cart_modal-input" type="number" name="" placeholder="Квартира">
+						  			</div>
+						  			<div class="col-lg-3 cart_modal-col">
+						  				<input class="cart_modal-input" type="number" name="" placeholder="Подъезд">
+						  			</div>
+						  			<div class="col-lg-3 cart_modal-col">
+						  				<input class="cart_modal-input" type="number" name="" placeholder="Код двери">
+						  			</div>
+						  			<div class="col-lg-3 cart_modal-col">
+						  				<input class="cart_modal-input" type="number" name="" placeholder="Этаж">
+						  			</div>
+						  			<div class="col-12 cart_modal-col">
+						  				<textarea class="cart_modal-input" type="text" maxlength="254" rows="3" name="" placeholder="Комментарий" required>
+						  					
+						  				</textarea>
+						  			</div>
+						  			<a class="btn btn_basket ml-2 mt-4" href="">Подтвердить адрес</a>
+						 			</div>
+							  </div>
+							  <div class="tab fade col-lg-8" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+									<div class="row">
+										<div class="col-lg-6 cart_modal-container">
+											<label class="radio">
+												<input type="radio" name="radio" required="">
+												<p class="radio__text">Barcelona</p>
+												<div class="radio_text-container">
+													<p>Минск, Рафиева, 44</p>
+													<a href="">+375(44)5537000</a>
+													<p>пн-пт 12:00-23:00<br>сб-вс 11:00-23:00</p>
+												</div>
+											</label>
+										</div>
+										<div class="col-lg-6 cart_modal-container">
+											<label class="radio">
+												<input type="radio" name="radio" required="">
+												<p class="radio__text">London</p>
+											</label>
+										</div>
+										<a class="btn btn_basket ml-2 mt-4" href="">Выбрать</a>
+									</div>
+							  </div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
