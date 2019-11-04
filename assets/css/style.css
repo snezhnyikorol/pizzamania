@@ -1045,3 +1045,21 @@ input::-webkit-inner-spin-button {
 	margin-top: 2px;
 	font-size: 14px;
 }
+
+.contact .col-md-4{
+	margin-top: 40px;
+}
+
+.contact img {
+	max-width: 150px;
+}
+
+.contact h2 {
+	color: #f05a23;
+}
+
+.contact a:hover, .contact h2:focus {
+	color: #f05a23;
+	-webkit-transition: all .25s ease;
+    		transition: all .25s ease;
+}
