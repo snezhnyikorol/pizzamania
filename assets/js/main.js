@@ -187,4 +187,8 @@ $('#basket').mouseenter(
   }
 )
 
+if (window.matchMedia("(max-width: 992px)").matches) {
+	$('.btn_basket-mobile').removeClass('d-none');
+}
+
 // -----------------BASKET END----------------------------

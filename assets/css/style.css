@@ -208,6 +208,49 @@ section {
 	padding: 10px 20px;
 }
 
+.btn_basket-mobile {
+	position: fixed;
+	z-index: 3;
+	bottom: 22px;
+	right: 22px;
+	width: 44px;
+	height: 44px;
+	background-image: radial-gradient(circle at 50%,at 100%,#ff6900,#ff6900);
+	background-image: radial-gradient(circle at 50% 100%,#ff6900,#ff6900);
+	box-shadow: 0 10px 24px 0 rgba(235,135,0,.24), 0 1px 24px 0 rgba(255,146,0,.19);
+	border-radius: 100px;
+	-webkit-transition: all .25s ease;
+	transition: all .25s ease;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.btn_basket-mobile-amount {
+	position: absolute;
+	z-index: 1;
+	top: 0;
+	left: 30px;
+	display: -webkit-box;
+	display: flex;
+	min-width: 15px;
+	height: 15px;
+	padding: 2px;
+	border-radius: 100px;
+	background: #fff;
+	border: 1px solid #ff6900;
+}
+
+.btn_basket-mobile-img {
+	display: -webkit-box;
+	display: flex;
+	width: 24px;
+	height: 100%;
+	margin: auto;
+	padding-bottom: 2px;
+}
+
 .btn_basket:hover {
 	color: #ffffff;
 }
@@ -759,7 +802,7 @@ footer * {
   font-size: 14px;
   line-height: 30px;
   font-weight: 500;
-  border-color: #babfd0;
+  border: 1px solid #babfd0;
   border-top-left-radius: 100px;
   border-bottom-left-radius: 100px;
   box-shadow: none;
@@ -909,6 +952,29 @@ footer * {
 	font-family: 'Rounded Mplus 1c';
 }
 
+.cart_modal-textarea {
+	display: block;
+    border-radius: 8px;
+    background-color: #fff;
+    border: 1px solid rgba(135,134,134,.32);
+    padding: 10px 15px;
+    margin-top: 20px;
+    color: #000;
+    font-size: 17px;
+    box-sizing: border-box;
+    width: 100%;
+    font-weight: 500;
+    outline: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-transition: border-color .2s ease;
+    transition: border-color .2s ease;
+	font-family: 'Rounded Mplus 1c';
+	resize: none;
+}
+
 .input_home {
 	background-color: rgba(135,134,134,.15);
 	border: 1px solid rgba(135,134,134,.15);
@@ -919,13 +985,6 @@ input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
     margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-}
-
-.cart_modal-col textarea {
-	height: 85px;
-    width: 100%;
-    resize: none;
-    box-shadow: none;
 }
 
 .cart_modal-container {
