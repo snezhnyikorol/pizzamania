@@ -42,7 +42,7 @@ $('.map_item').click(function () {
   if (!menuState) {
     $('.substrate').animate({opacity: '0'}, 200, function () {
       $('.map_wrapper').animate({right: '-3000px'}, 500)
-    })  
+    })
   }
 })
 
@@ -62,10 +62,10 @@ $(function () {
 	$('.menu_info').popover({
 	  container: 'body',
 		html: true,
-		content: '<div class="tooltip_content"><h6>Пищевая ценность на 100г</h6><div class="tooltip_content-container"><p>Энерг. ценность</p><p>214,3 ккал</p>				</div><div class="tooltip_content-container"><p>Энерг. ценность</p><p>214,3 ккал</p></div><div class="tooltip_content-container"><p>Энерг. ценность</p><p>214,3 ккал</p></div><div class="tooltip_content-container"><p>Энерг. ценность</p><p>214,3 ккал</p></div></div>'		  
+		content: '<div class="tooltip_content"><h6>Пищевая ценность на 100г</h6><div class="tooltip_content-container"><p>Энерг. ценность</p><p>214,3 ккал</p>				</div><div class="tooltip_content-container"><p>Энерг. ценность</p><p>214,3 ккал</p></div><div class="tooltip_content-container"><p>Энерг. ценность</p><p>214,3 ккал</p></div><div class="tooltip_content-container"><p>Энерг. ценность</p><p>214,3 ккал</p></div></div>'
   })
 })
-        
+
 $('.akica_slider-container').slick({
   arrows: true
 });
@@ -162,7 +162,7 @@ let basketTemplate = `<div class="container popover basket_popover">
 </div>`
 
 function addBasketItem(name, size) {
-   
+
 }
 
 $('#basket').popover({
@@ -172,7 +172,7 @@ $('#basket').popover({
   title: 'hello',
   trigger: 'manual',
   template: basketTemplate,
-  boundary: document.getElementById('akcia_slider').children[0]
+  // boundary: document.getElementById('akcia_slider').children[0]
 })
 
 $('#basket').mouseenter(
