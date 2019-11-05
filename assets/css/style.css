@@ -1034,6 +1034,7 @@ input::-webkit-inner-spin-button {
 		margin: 0px!important;
 	}
 
+<<<<<<< HEAD
 	.cart_price {
 		font-size: 20px;
 		text-align: center;
@@ -1045,6 +1046,12 @@ input::-webkit-inner-spin-button {
 		min-width: auto;
 		padding: 10px 20px;
 	}
+=======
+	.about_container .section_title {
+    font-size: 2.95rem;
+	}
+
+>>>>>>> d46cee0c0bc78c64cb5f00d23fb11d56c8b12e31
 }
 
 
@@ -1066,5 +1073,8 @@ input::-webkit-inner-spin-button {
 	}
 	.about_container .section_title {
     font-size: 2.5rem;
+	}
+	.size_item label {
+		font-size: 12px;
 	}
 }
