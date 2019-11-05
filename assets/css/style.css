@@ -1014,12 +1014,13 @@ input::-webkit-inner-spin-button {
 		display: none;
 	}
 
-	.modal-content button.close {
+	.modal-content button.close, .cart_modal button.close {
 		top: 15px;
 		right: 20px;
+		z-index: 9;
 	}
 
-	#close_img {
+	#close_img, #cart_modal-close {
 		fill: rgba(111, 110, 111, 0.5);
 	}
 
@@ -1033,6 +1034,17 @@ input::-webkit-inner-spin-button {
 		margin: 0px!important;
 	}
 
+	.cart_price {
+		font-size: 20px;
+		text-align: center;
+	}
+}
+
+@media (max-width: 479px) {
+	.cart_btn-container a {
+		min-width: auto;
+		padding: 10px 20px;
+	}
 }
 
 
