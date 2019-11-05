@@ -701,6 +701,12 @@ footer * {
 		fill: rgba(111, 110, 111, 0.5);
 	}
 
+	.lunch_menu-card img {
+    width: 75%;
+    display: block;
+    margin: 0 auto;
+}
+
 }
 
 
