@@ -1030,6 +1030,10 @@ input::-webkit-inner-spin-button {
 		margin: 0px!important;
 	}
 
+	.about_container .section_title {
+    font-size: 2.95rem;
+	}
+
 }
 
 
@@ -1051,5 +1055,8 @@ input::-webkit-inner-spin-button {
 	}
 	.about_container .section_title {
     font-size: 2.5rem;
+	}
+	.size_item label {
+		font-size: 12px;
 	}
 }
