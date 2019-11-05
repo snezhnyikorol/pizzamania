@@ -838,6 +838,7 @@ footer * {
   box-shadow: none;
   padding-left: 10px;
   padding-right: 10px;
+  outline: none;
 }
 
 .promocode_button {
@@ -852,6 +853,8 @@ footer * {
     background-color: transparent;
     position: relative;
     margin-left: -5px;
+    outline: none;
+    box-shadow: none;
 }
 
 .cart_list {
