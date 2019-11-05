@@ -60,10 +60,12 @@ $('#soup').click(function() {
 
 // item
 
-$('.lunch_menu-card').click(function() {
+$('.lunch_menu-card').click(function(e) {
     // pickedItem = $(this).find('img').attr('src');
-    // $('#' + getPosition(stateList[state])).attr('src', pickedItem.slice(0, -4) + '_' + '.jpg');
-    $('#' + getPosition(stateList[state])).attr('src', $(this).find('img').attr('src').slice(0, -4) + '_' + '.jpg');
+		// $('#' + getPosition(stateList[state])).attr('src', pickedItem.slice(0, -4) + '_' + '.jpg');
+		if (!$(e.target).hasClass('menu_info')) {
+			$('#' + getPosition(stateList[state])).attr('src', $(this).find('img').attr('src').slice(0, -4) + '_' + '.jpg');
+		}
 })
 
 $('.lunch_next').click(function(event) {
@@ -79,13 +81,13 @@ $('.lunch_next').click(function(event) {
     event.preventDefault();
 })
 
-$('.lunch_prev').click(function(event) { 
+$('.lunch_prev').click(function(event) {
     if (state > 1) {
         $('#' + stateList[state]).fadeToggle('fast');
         state--;
         $('#' + stateList[state]).fadeToggle('fast');
         // pickedItem = '';
-        $('.launch_view').css('height', $('#' + stateList[state]).outerHeight());    
+        $('.launch_view').css('height', $('#' + stateList[state]).outerHeight());
     }
 
     event.preventDefault();
