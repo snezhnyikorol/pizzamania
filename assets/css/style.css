@@ -684,18 +684,7 @@ footer * {
 }
 
 @media (max-width: 768px){
-	/* .product_container {
-		position: relative;
-	}
-
-	.product_container .img-fluid {
-		position: absolute;
-    left: -12%;
-	}
-
-	.product_text-container {
-		padding-bottom: 50px;
-	} */
+ /*  */
 }
 
 @media (max-width: 576px){
@@ -704,9 +693,6 @@ footer * {
 	}
 
 	.modal-content button.close {
-		/* position: absolute;
-		width: 25px;
-		height: 25px; */
 		top: 15px;
 		right: 20px;
 	}
