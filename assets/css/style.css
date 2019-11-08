@@ -1028,6 +1028,14 @@ input::-webkit-inner-spin-button {
 	.item-tel p {
 		font-size: 25px;
 	}
+	
+	.logo_foooter {
+		display: none;
+	}
+
+	.footer_info {
+		margin-top: 30px;
+	}
 }
 
 @media (max-width: 576px){
