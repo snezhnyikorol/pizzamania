@@ -42,7 +42,7 @@ section {
 
 @media (min-width: 1500px) {
 	.container {
-		max-width: 1280px;
+		max-width: 1320px;
 	}
 }
 
@@ -470,7 +470,7 @@ footer {
 }
 
 .logo_foooter {
-	max-width: 350px;
+	max-width: 220px;
 	width: 100%;
 }
 
@@ -985,6 +985,12 @@ input::-webkit-inner-spin-button {
 @media (max-width: 992px) {
 	.container {
 		max-width: 100%;
+		padding-right: 15px;
+		padding-left: 15px; 
+	}
+
+	.btn-primary {
+		padding: 6px 12px; 
 	}
 
 	.lunch_view {
@@ -1025,6 +1031,14 @@ input::-webkit-inner-spin-button {
 }
 
 @media (max-width: 576px){
+
+	.pizza_img {
+		width: 50%;
+		max-width: 210px;
+		min-width: 180px;
+		margin: 0 auto;
+	}
+
 	.substrate {
 		display: none;
 	}
