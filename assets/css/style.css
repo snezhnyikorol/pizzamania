@@ -374,7 +374,7 @@ header {
 	height: 41px;
 }
 
-.akica_slider-container img {
+.akcia_slider-container img {
 	border-radius: 10px;
 }
 
@@ -648,6 +648,36 @@ footer * {
 	height: auto;
 }
 
+.basket_popover .amount_container .amount_changer {
+	position: relative;
+	width: 20px;
+	height: 20px;
+  background: none;
+  cursor: pointer;
+  border: 1px solid #ff6900;
+  border-radius: 6px;
+}
+
+.basket_popover .amount_container .amount_changer span {
+	position: absolute;
+	top: -3px;
+	left: calc(50% - 5px);
+	color: #ff6900;
+	font-weight: 700;
+}
+
+.basket_popover .amount_container .amount_changer:first-child span {
+	left: calc(50% - 3px);
+}
+
+.basket_popover .amount_container h6 {
+	font-size: 14px;
+}
+
+.basket_popover-price {
+	font-weight: 500;
+}
+
 /* ---------------------------------------------------- */
 
 /*actions page*/
@@ -689,6 +719,7 @@ footer * {
   border: 1px solid #babfd0;
   border-top-left-radius: 100px;
   border-bottom-left-radius: 100px;
+  border-right: none;
   box-shadow: none;
   padding-left: 10px;
   padding-right: 10px;
@@ -697,7 +728,7 @@ footer * {
 
 .promocode_button {
     min-width: 96px;
-    padding: 3.6px 10px 4px;
+    padding: 3px 10px 4px;
     font-size: 14px;
     font-weight: 500;
     border-top-right-radius: 100px;
@@ -709,11 +740,14 @@ footer * {
     margin-left: -5px;
     outline: none;
     box-shadow: none;
+    cursor: pointer;
 }
 
 .promocode_button:hover {
 	color: #ffffff;
 	background-color: #ff6900;
+	-webkit-transition: all .25s ease;
+	transition: all .25s ease;
 }
 
 .promocode_button.focus, .promocode_button:focus {
@@ -722,6 +756,8 @@ footer * {
 	background-color: #ffffff;
 	border-color: #f05a23;
 	color: #f1602c;
+	-webkit-transition: all .25s ease;
+	transition: all .25s ease;
 }
 
 .promocode_button:not(:disabled):not(.disabled):active {
@@ -1047,6 +1083,16 @@ input::-webkit-inner-spin-button {
 		margin: 0 auto;
 	}
 
+	.section_title {
+		font-size: 28px;
+		margin-bottom: 25px;
+	}
+
+	.product_text-container p {
+		padding-top: 10px;
+		padding-bottom: 18px;
+	}
+
 	.substrate {
 		display: none;
 	}
@@ -1076,6 +1122,18 @@ input::-webkit-inner-spin-button {
 		font-size: 20px;
 		text-align: center;
 	}
+
+	.footer_links-title {
+		font-size: 20px;
+	}
+
+	.item-tel p {
+		font-size: 22px;
+	}
+
+	.about_container .section_title {
+		font-size: 2.5rem;
+	}
 }
 
 @media (max-width: 479px) {
@@ -1085,6 +1143,10 @@ input::-webkit-inner-spin-button {
 	}
 	.about_container .section_title {
     font-size: 2.95rem;
+	}
+
+	.delivery_time h6 {
+		padding: 8px 0;
 	}
 
 }
