@@ -66,7 +66,7 @@ $(function () {
   })
 })
 
-$('.akica_slider-container').slick({
+$('.akcia_slider-container').slick({
   arrows: true
 });
 
@@ -109,13 +109,32 @@ let basketTemplate = `<div class="container popover basket_popover">
   </div>
   <div class="col-8 basket_content container">
     <div class="row">
-    <div class="col-10">
-      <h3 class="basket_title">Барбекю</h3>
-      <h5 class="basket_subtitle">Традиционное, 32 см</h5>
+      <div class="col-10">
+        <h3 class="basket_title">Барбекю</h3>
+        <h5 class="basket_subtitle">Традиционное, 32 см</h5>
+      </div>
+      <div class="col-2">
+        <img src="" alt="" />
+      </div>
     </div>
-    <div class="col-12"></div>
+    <div class="row mt-2">
+      <div class="col-12">
+        <div class="row">
+          <div class="col-6 amount_container d-flex justify-content-start align-items-center">
+            <div class="amount_changer">
+              <span>–</span>
+            </div>
+            <h6 class="mx-1">1</h6>
+            <div class="amount_changer">
+              <span>+</span>
+            </div>
+          </div>
+          <div class="col-6">
+            <p class="basket_popover-price text-right">7,40 руб</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="row"></div>
   </div>
   </div>
 </div>

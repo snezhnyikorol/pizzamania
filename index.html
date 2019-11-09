@@ -18,13 +18,15 @@
 					<div class="col-lg-9 col-10 col-sm-11 col-md-11">
 						<div class="header_items">
 							<div>
-								<img src="assets/img/logo.png">
+								<a href="index.html">
+									<img src="assets/img/logo.png">
+								</a>
 							</div>
 							<div class="delivery_time d-none d-md-block">
 								<h5 class="mb-1">Бесплатная доставка</h5>
 								<h6>с 10:00 до 22:30</h6>
 							</div>
-							<a href="" class="item-tel d-flex align-items-center justify-content-end d-none">
+							<a href="tel:7558" class="item-tel d-flex align-items-center justify-content-end d-none">
 								<img src="./assets/img/phone.png">
 								<p>7558</p>
 							</a>
@@ -46,20 +48,22 @@
 				<div class="row">
 					<div class="col-lg-9">
 						<div class="h-100 d-flex align-items-center justify-content-between">
-							<a class="nav_item" href="">Пиццы</a>
-							<a class="nav_item" href="">Обеденное меню</a>
-							<a class="nav_item" href="">Салаты</a>
-							<a class="nav_item" href="">Закуски</a>
-							<a class="nav_item" href="">Супы</a>
-							<a class="nav_item" href="">Второе</a>
-							<a class="nav_item" href="">Хлеб</a>
-							<a class="nav_item" href="">Десерты</a>
-							<a class="nav_item" href="">Напитки</a>
-							<a class="nav_item" href="">О нас</a>
+							<a class="nav_item" href="index.html#pizza">Пиццы</a>
+							<a class="nav_item" href="index.html#lunch_menu">Обеденное меню</a>
+							<a class="nav_item" href="index.html">Салаты</a>
+							<a class="nav_item" href="index.html">Закуски</a>
+							<a class="nav_item" href="index.html">Супы</a>
+							<a class="nav_item" href="index.html">Второе</a>
+							<a class="nav_item" href="index.html">Десерты</a>
+							<a class="nav_item" href="index.html">Напитки</a>
+							<a class="nav_item" href="actions.html">Акции</a>
+							<a class="nav_item" href="">Работа в ПМ</a>
+							<a class="nav_item" href="contact.html">Контакты</a>
+							<a class="nav_item" href="about.html">О нас</a>
 						</div>
 					</div>
 					<div class="col-lg-3 d-flex justify-content-end align-items-center">
-						<a href="" id="basket" class="btn btn_basket">Корзина</a>
+						<a href="cart.html" id="basket" class="btn btn_basket">Корзина</a>
 					</div>
 				</div>
 			</div>
@@ -71,16 +75,18 @@
 							<div class="map_close"></div>
 						</div>
 						<div class="map_container flex-column d-flex align-items-end justify-content-between">
-							<a href="" class="map_item">Пиццы</a>
-							<a href="" class="map_item">Обеденное меню</a>
-							<a href="" class="map_item">Салаты</a>
-							<a href="" class="map_item">Закуски</a>
-							<a href="" class="map_item">Супы</a>
-							<a href="" class="map_item">Второе</a>
-							<a href="" class="map_item">Хлеб</a>
-							<a href="" class="map_item">Десерты</a>
-							<a href="" class="map_item">Напитки</a>
-							<a href="" class="map_item">О нас</a>
+							<a class="map_item" href="">Пиццы</a>
+							<a class="map_item" href="">Обеденное меню</a>
+							<a class="map_item" href="">Салаты</a>
+							<a class="map_item" href="">Закуски</a>
+							<a class="map_item" href="">Супы</a>
+							<a class="map_item" href="">Второе</a>
+							<a class="map_item" href="">Десерты</a>
+							<a class="map_item" href="">Напитки</a>
+							<a class="map_item" href="">Акции</a>
+							<a class="map_item" href="">Работа в ПМ</a>
+							<a class="map_item" href="contact.html">Контакты</a>
+							<a class="map_item" href="">О нас</a>
 							<a href="" class="item-tel d-flex align-items-center justify-content-start">
 								<img src="./assets/img/phone.png">
 								<p>7558</p>
@@ -95,9 +101,15 @@
 		<section id="akcia_slider" class="d-md-block d-none">
 			<div class="container">
 				<div class="row">
-					<div class="col-12 akica_slider-container">
+					<div class="col-12 akcia_slider-container">
 						<img class="mx-2" src="assets/img/akcia_slider/banner.png">
 						<img class="mx-2" src="assets/img/akcia_slider/banner.png">
+					</div>
+					<div class="col-12 d-flex justify-content-center align-items-center mt-4">
+						<div class="promocode_container">
+							<input class="promocode_input" type="" name="" placeholder="Введите промокод">
+							<button class="promocode_button">Применить</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -107,7 +119,7 @@
 		<section id="pizza">
 			<div class="container">
 				<div class="row">
-					<article class="col-lg-3 col-md-6 col-12 mt-4 mt-lg-0 product_container">
+					<article class="col-lg-3 col-md-6 col-12 py-4 mt-lg-0 product_container">
 						<div class="row">
 							<img class="pizza_img img-fluid align-self-baseline col-lg-12 col-sm-5" src="assets/img/pizza_img.png">
 							<div class="product_text-container col-lg-12 col-sm-7 mt-lg-4">
@@ -121,7 +133,7 @@
 						</div>
 
 					</article>
-					<article class="col-lg-3 col-md-6 col-12 mt-4 mt-lg-0 product_container">
+					<article class="col-lg-3 col-md-6 col-12 py-4 mt-lg-0 product_container">
 						<div class="row">
 							<img class="pizza_img img-fluid align-self-baseline col-lg-12 col-sm-5" src="assets/img/pizza_img.png">
 							<div class="product_text-container col-lg-12 col-sm-7 mt-lg-4">
@@ -135,7 +147,7 @@
 						</div>
 
 					</article>
-					<article class="pizza_imgcol-lg-3 col-md-6 col-12 mt-4 mt-lg-0 product_container">
+					<article class="col-lg-3 col-md-6 col-12 py-4 mt-lg-0 product_container">
 						<div class="row">
 							<img class="pizza_img img-fluid align-self-baseline col-lg-12 col-sm-5" src="assets/img/pizza_img.png">
 							<div class="product_text-container col-lg-12 col-sm-7 mt-lg-4">
@@ -149,7 +161,7 @@
 						</div>
 
 					</article>
-					<article class="col-lg-3 col-md-6 col-12 mt-4 mt-lg-0 product_container">
+					<article class="col-lg-3 col-md-6 col-12 py-4 mt-lg-0 product_container">
 						<div class="row">
 							<img class="pizza_img img-fluid align-self-baseline col-lg-12 col-sm-5" src="assets/img/pizza_img.png">
 							<div class="product_text-container col-lg-12 col-sm-7 mt-lg-4">
@@ -431,10 +443,10 @@
 					<div class="col-md-4 col-7 footer_links-container order-1">
 						<h4 class="footer_links-title">Полезные ссылки</h4>
 						<ul>
-							<li><a class="footer_link" href="">Программа лояльности</a></li>
-							<li><a class="footer_link" href="">О нас</a></li>
+							<li><a class="footer_link" href="actions.html">Программа лояльности</a></li>
+							<li><a class="footer_link" href="about.html">О нас</a></li>
 							<li><a class="footer_link" href="">Вакансии</a></li>
-							<li><a class="footer_link" href="">Контакты</a></li>
+							<li><a class="footer_link" href="contact.html">Контакты</a></li>
 						</ul>
 					</div>
 					<div class="col-md-4 d-flex justify-content-center align-items-center order-0 order-md-2">
@@ -449,7 +461,11 @@
 							<img src="./assets/img/phone.png">
 							<p>7558</p>
 						</a>
+<<<<<<< HEAD
 						<!-- <a href="">
+=======
+						<a href="http://dynamicov.ru/">
+>>>>>>> 795f9d8d810995d2de03285927fdb925d09f8ec8
 							<img class="dynamicov_logo" src="">
 						</a> -->
 						<div class="right-footer-block">
@@ -468,7 +484,7 @@
 			</div>
 		</footer>
 
-		<a href="" class="btn_basket-mobile">
+		<a href="cart.html" class="btn_basket-mobile">
 			<span class="btn_basket-mobile-amount"></span>
 			<span class="btn_basket-mobile-img">
 					<img class="img-fluid" src="./assets/img/cart.svg" alt="">
