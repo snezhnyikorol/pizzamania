@@ -66,150 +66,63 @@ $(function () {
   })
 })
 
-$('.akcia_slider-container').slick({
-  arrows: true
+$('.actions_slider-container').slick({
+	arrows: true,
+	autoplay: true,
+  autoplaySpeed: 5000,
+	responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        arrows: false,
+        dots: true
+      }
+    }
+  ]
 });
 
 // data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="hello"
+let price;
+let priceAlt;
+let size = 1
 
 $("input[name='size']").change(function() {
   if ($(this).val() == 2) {
-    $('.size_indicator').css('margin-left', 'calc(50% + 1px)')
+		$('.size_indicator').css('margin-left', 'calc(50% + 1px)')
+		$('#choseModal').find('.price').text(priceAlt.replace('.', ','))
   } else {
-    $('.size_indicator').css('margin-left', 'calc(0% + 1px)')
+		$('.size_indicator').css('margin-left', 'calc(0% + 1px)')
+		$('#choseModal').find('.price').text(price.replace('.', ','))
   }
 })
 
-$('#modal_accept').on('click', function (e) {
-  e.preventDefault();
-  let food = $("input[name='food_name']").val();
-  let size = $("input:checked[name='size']").val();
-})
-
-
-// ------------------------------------BASKET-----------------------------------
-
-// $('#basket').hover(function(){
-//     this.popover()
-//   }, function() {
-
+// $('#modal_accept').on('click', function (e) {
+//   e.preventDefault();
+//   let food = $("input[name='food_name']").val();
+//   let size = $("input:checked[name='size']").val();
 // })
 
-// $('#basket').popover({
-//   template: 'hellohellohello',
-//   container: 'body'
-// })
 
-let basketTemplate = `<div class="container popover basket_popover">
-<div class="arrow"></div>
-<div class="basket_item">
-  <div class="row">
-  <div class="col-4 basket_img">
-    <img src="./assets/img/pizza_img.png" alt="">
-  </div>
-  <div class="col-8 basket_content container">
-    <div class="row">
-      <div class="col-10">
-        <h3 class="basket_title">Барбекю</h3>
-        <h5 class="basket_subtitle">Традиционное, 32 см</h5>
-      </div>
-      <div class="col-2">
-        <img src="" alt="" />
-      </div>
-    </div>
-    <div class="row mt-2">
-      <div class="col-12">
-        <div class="row">
-          <div class="col-6 amount_container d-flex justify-content-start align-items-center">
-            <div class="amount_changer">
-              <span>–</span>
-            </div>
-            <h6 class="mx-1">1</h6>
-            <div class="amount_changer">
-              <span>+</span>
-            </div>
-          </div>
-          <div class="col-6">
-            <p class="basket_popover-price text-right">7,40 руб</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-</div>
-<div class="basket_item">
-  <div class="row">
-  <div class="col-4 basket_img">
-    <img src="./assets/img/pizza_img.png" alt="">
-  </div>
-  <div class="col-8 basket_content container">
-    <div class="row">
-    <div class="col-10">
-      <h3 class="basket_title">Барбекю</h3>
-      <h5 class="basket_subtitle">Традиционное, 32 см</h5>
-    </div>
-    <div class="col-12"></div>
-    </div>
-    <div class="row"></div>
-  </div>
-  </div>
-</div>
-<div class="basket_item">
-  <div class="row">
-  <div class="col-4 basket_img">
-    <img src="./assets/img/pizza_img.png" alt="">
-  </div>
-  <div class="col-8 basket_content container">
-    <div class="row">
-    <div class="col-10">
-      <h3 class="basket_title">Барбекю</h3>
-      <h5 class="basket_subtitle">Традиционное, 32 см</h5>
-    </div>
-    <div class="col-12"></div>
-    </div>
-    <div class="row"></div>
-  </div>
-  </div>
-</div>
-<div class="basket_footer">
-  <div class="row">
-  <div class="col-6">Сумма заказа</div>
-  <div class="col-6 text-right">2,00 руб.</div>
-  </div>
-</div>
-</div>`
+$('#choseModal').on('show.bs.modal', function (event) {
+	var button = $(event.relatedTarget) // Button that triggered the modal
+	let description = $(button[0].parentElement.parentElement).find('p').text()
 
-function addBasketItem(name, size) {
-
-}
-
-$('#basket').popover({
-  container: 'body',
-  content: 'hellooooooooooooo',
-  placement: 'bottom',
-  title: 'hello',
-  trigger: 'manual',
-  template: basketTemplate,
-  // boundary: document.getElementById('akcia_slider').children[0]
+	let name = button.data('name')
+	let type = button.data('type')
+	price = button.data('price')
+	priceAlt = button.data('pricealt')
+	let image = button.data('img')
+	var modal = $(this)
+	let span = $('<div/>').append(modal.find('.modal_title').children('span').clone(true))
+	modal.find('.modal_title').html(`${name}${$(span).html()}`)
+	modal.find('.description').text(description)
+	if ($("input[name='size']").val==1) {
+		modal.find('.price').text(price.replace('.', ','))
+	} else {
+		modal.find('.price').text(priceAlt.replace('.', ','))
+	}
 })
 
-$('#basket').mouseenter(
-  function(){
-    $('#basket').popover('show');
-    $('.basket_popover').mouseleave(
-      function(){
-        $('#basket').popover('hide')
-        console.log("ou")
-      }
-    )
-  }
-)
-
-if (window.matchMedia("(max-width: 992px)").matches) {
-	$('.btn_basket-mobile').removeClass('d-none');
-} else {
-	$('.btn_basket-mobile').addClass('d-none');
-}
-
-// -----------------BASKET END----------------------------
+$('#modal_accept').click(function (event) {
+	event.preventDefault();
+})
