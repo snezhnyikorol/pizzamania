@@ -6,10 +6,9 @@ let data = {
 	0: {
 		image: "./assets/img/pizza_img.png",
 		name: "Пицца",
-		type: "Вкусная",
 		size: "30см",
 		price: "300",
-		count: "3"
+		count: 3
 	}
 };
 
@@ -18,21 +17,20 @@ let basketSvg = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xml
 <path d="M13.8498 3.00681L6.19643 3.00688C4.98382 2.88702 5.02127 4.36489 5 5L14.9917 4.99999C15.0165 4.38088 15.0624 3.12667 13.8498 3.00681Z" fill="#373535"></path>
 </svg>`;
 
-function addPizza(image, name, type, size, price, count) {
+function addPizza(image, name, size, price, count) {
 	data.count++;
 	data.price = (Math.round(data.price*100) + Math.round(price*100))/100;
-	data[data.count] = {
+	data[data.count-1] = {
 		image: image,
 		name: name,
-		type: type,
 		size: size,
 		price: price,
 		count: count
 	};
 }
 
-function generatePizza(image, name, type, size, price, count, id) {
-	return `<div class="basket_item" data-type="pizza" data-id=${id} data-name=${name} data-type=${type} data-size=${size} data-price=${price} data-count="1">
+function generatePizza(image, name, size, price, count, id) {
+	return `<div class="basket_item" data-type="pizza" data-id=${id} data-name=${name} data-size=${size} data-price=${price} data-count="1">
   <div class="row">
   <div class="col-4 basket_img">
     <img src=${image} alt=${name}>
@@ -41,7 +39,7 @@ function generatePizza(image, name, type, size, price, count, id) {
     <div class="row">
       <div class="col-10">
         <h3 class="basket_title">${name}</h3>
-        <h5 class="basket_subtitle">${type}, ${size}</h5>
+        <h5 class="basket_subtitle">${size}</h5>
       </div>
       <div data-id=${id} class="col-2 px-0 d-flex justify-content-center align-items-start basket_delete" onclick='deleteItem(${id})'>
         ${basketSvg}
@@ -87,16 +85,29 @@ function generateBasket() {
 		<div class="basket_footer">
 		<div class="row">
 		<div class="col-6"><p>Сумма заказа</p></div>
-		<div class="col-6 text-right"><p>${data.price} руб.</p></div>
+		<div class="col-6 text-right"><p><span id="totalPrice">${data.price.toString().replace('.', ',')}</span> руб.</p></div>
 		</div>
 		</div>
 		</div>
 		</div>`);
-		for (let index = 0; index < data.count; index++) {
-			const element = data[index];
-			let item = generatePizza(element.image, element.name, element.type, element.size, element.price, element.count, index);
-			$(temp).find('.basket_body').append(item);
+		let index = 0;
+		for (const key in data) {
+			if (data.hasOwnProperty(key)) {
+				const element = data[key];
+				if (!(isNaN(parseInt(key)))) {
+					let item = generatePizza(element.image, element.name, element.size, element.price, element.count, index);
+					$(temp).find('.basket_body').append(item);
+					index++;
+				}
+			}
 		}
+
+		// for (let index = 0; index < data.count; index++) {
+		// 	const element = data[index];
+		// 	console.log(element)
+		// 	let item = generatePizza(element.image, element.name, element.size, element.price, element.count, index);
+		// 	$(temp).find('.basket_body').append(item);
+		// }
 		return $(temp).html();
 	}
 }
@@ -113,9 +124,10 @@ function deleteItem(index) {
 	item = $('[data-id='+index+']').filter('.basket_item');
 	data.count--;
 	data.price = (Math.round(data.price*100) - Math.round(parseFloat($(item).attr('data-price'))*100))/100;
+	$('#totalPrice').text(data.price.toString().replace('.', ','))
 	$(item).remove();
 	delete data[index];
-	if (index == 0) {
+	if (data.count == 0) {
 		$('.basket_popover').html(`<div class="arrow"></div>
 		<div class="basket_body d-flex justify-content-center align-items-center">
 		<h6>Корзина пуста</h6>
@@ -124,7 +136,24 @@ function deleteItem(index) {
 	}
 }
 
-let basketTemplate = generateBasket();
+let basketTemplate;
+
+function updateBasket() {
+	$('#basket').popover('dispose')
+	basketTemplate = generateBasket();
+	$('#basket').popover({
+		container: 'body',
+		content: 'hellooooooooooooo',
+		placement: 'bottom',
+		title: 'hello',
+		trigger: 'manual',
+		template: basketTemplate,
+		// boundary: document.getElementById('actions_slider').children[0]
+	})
+}
+
+updateBasket();
+
 
 $('#basket').popover({
   container: 'body',
@@ -138,12 +167,27 @@ $('#basket').popover({
 
 $('#basket').mouseenter(
   function(){
+		let isOver = false;
     $('#basket').popover('show');
     $('.basket_popover').mouseleave(
       function(){
         $('#basket').popover('hide')
       }
-    )
+		);
+		$('#basket').mouseleave(
+      function(e){
+				setTimeout(function () {
+					if (!isOver) {
+						$('#basket').popover('hide')
+					}
+				}, 300)
+      }
+		)
+		$('.basket_popover').mouseenter(
+			function(e){
+				isOver = true;
+				}
+		)
   }
 )
 

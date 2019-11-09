@@ -82,17 +82,29 @@ $('.actions_slider-container').slick({
 });
 
 // data-container="body" data-toggle="popover" data-placement="bottom" data-trigger="hover" data-content="hello"
+
+dataItem = {
+	image: "",
+	name: "",
+	size: 0,
+	price: "",
+	count: 1
+}
+
 let price;
 let priceAlt;
-let size = 1
 
 $("input[name='size']").change(function() {
   if ($(this).val() == 2) {
 		$('.size_indicator').css('margin-left', 'calc(50% + 1px)')
 		$('#choseModal').find('.price').text(priceAlt.replace('.', ','))
+		dataItem.price = priceAlt
+		dataItem.size = '1м'
   } else {
 		$('.size_indicator').css('margin-left', 'calc(0% + 1px)')
 		$('#choseModal').find('.price').text(price.replace('.', ','))
+		dataItem.price = price
+		dataItem.size = '30см'
   }
 })
 
@@ -106,17 +118,19 @@ $("input[name='size']").change(function() {
 $('#choseModal').on('show.bs.modal', function (event) {
 	var button = $(event.relatedTarget) // Button that triggered the modal
 	let description = $(button[0].parentElement.parentElement).find('p').text()
-
-	let name = button.data('name')
-	let type = button.data('type')
+	$("input[name='size'][value='1']").prop('checked', true)
+	$('.size_indicator').css('margin-left', 'calc(0% + 1px)')
 	price = button.data('price')
 	priceAlt = button.data('pricealt')
-	let image = button.data('img')
+	dataItem.price = price
+	dataItem.size = '30см'
+	dataItem.name = button.data('name')
+	dataItem.image = button.data('img')
 	var modal = $(this)
 	let span = $('<div/>').append(modal.find('.modal_title').children('span').clone(true))
-	modal.find('.modal_title').html(`${name}${$(span).html()}`)
+	modal.find('.modal_title').html(`${dataItem.name}${$(span).html()}`)
 	modal.find('.description').text(description)
-	if ($("input[name='size']").val==1) {
+	if ($("input[name='size']").val()==1) {
 		modal.find('.price').text(price.replace('.', ','))
 	} else {
 		modal.find('.price').text(priceAlt.replace('.', ','))
@@ -125,4 +139,13 @@ $('#choseModal').on('show.bs.modal', function (event) {
 
 $('#modal_accept').click(function (event) {
 	event.preventDefault();
+	addPizza(dataItem.image, dataItem.name, dataItem.size, dataItem.price, dataItem.count);
+	updateBasket();
+	$('#choseModal').modal('hide');
+})
+
+$("#phoneInput").mask("+375 (99) 999-99-99");
+
+$('#phoneModal').on('show.bs.modal', function (e) {
+	$('#orderModal').modal('hide')
 })
