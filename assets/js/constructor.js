@@ -162,6 +162,9 @@ function showStep(n, t = 'forward') {
   // $('.quiz-block-footer').find('.col-lg-3').addClass('d-none')
 
  }
+ 	if ($('.lunch_menu-control').hasClass('no-events')) {
+		$('.lunch_menu-control').removeClass('no-events')
+	 }
 
  if(t == 'back' && currentStep+2 == steps.length) {
 	$('#back-button + .lunch_basket').remove();
@@ -198,6 +201,11 @@ $('.lunch_menu-card').click(function(event) {
 			deleteInfo(currentItems[currentStep]);
 		}
 		$(event.currentTarget).addClass('active');
+		if(currentStep+1 != steps.length)
+		{
+			$('.lunch_menu-control').addClass('no-events')
+		}
+
 		currentItems[currentStep] = event.currentTarget;
 		addInfo(currentItems[currentStep]);
 		// переход

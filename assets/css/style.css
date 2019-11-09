@@ -540,13 +540,7 @@ header {
 	margin-bottom: 10px;
 }
 
-#firstWrapper {
-	width: 124px;
-	height: 190px;
-	overflow: hidden;
-}
-
-#secondWrapper {
+#firstWrapper, #secondWrapper  {
 	width: 124px;
 	height: 190px;
 	overflow: hidden;
@@ -615,6 +609,8 @@ header {
 /*footer*/
 
 .right-footer-block {
+	position: relative;
+    left: -15px;
 	display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;
@@ -1208,7 +1204,28 @@ input::-webkit-inner-spin-button {
 
 	.map_item {
 		font-size: 16px;
-  }
+	}
+
+	.lunch_menu-card img {
+		max-height: 120px;
+	}
+
+	#firstWrapper, #secondWrapper  {
+		width: calc(124px * 0.7);
+		height: calc(190px * 0.7);
+	}
+
+	#saladWrapper, #soupWrapper {
+    height: calc(135px * 0.7);
+	}
+
+	.lunch_info h6, .lunch_info p {
+		font-size: 14px;
+	}
+
+	.lunch_info h4 {
+		font-size: 20px;
+	}
 }
 
 @media (max-width: 992px) {
@@ -1242,6 +1259,56 @@ input::-webkit-inner-spin-button {
 
 	.logo_foooter {
 		margin: 20px 0;
+	}
+
+	.lunch_menu-card {
+		padding: 10px;
+	}
+
+	.lunch_menu-card img {
+    max-height: 100px;
+	}
+
+	.lunch_selection {
+    height: 375px;
+    min-height: 375px;
+	}
+
+	.step {
+		max-height: 281px;
+	}
+
+	#firstWrapper, #secondWrapper  {
+		width: calc(124px * 1.2);
+		height: calc(190px * 1.2);
+	}
+
+	#saladWrapper, #soupWrapper {
+    height: calc(135px * 1.2);
+	}
+
+	#salad {
+		float: none;
+	}
+
+	.lunch_info {
+		margin-bottom: 20px;
+	}
+
+	.lunch_info h6, .lunch_info p {
+		font-size: 1rem;
+	}
+
+	.lunch_info h4 {
+		font-size: 1.5rem;
+	}
+
+	#lunch_required {
+		text-align: right;
+	}
+
+	.product_price-container h4 {
+		margin-right: 30px;
 	}
 }
 
@@ -1307,14 +1374,28 @@ input::-webkit-inner-spin-button {
 	}
 
 	.lunch_menu-card img {
-	    width: 75%;
-	    display: block;
-	    margin: 0 auto;
-	    max-width: 200px;
+    max-height: 146px;
+	}
+
+	.lunch_menu-card {
+		margin: 15px auto;
+	}
+
+	.lunch_selection {
+    height: 1065px;
+    min-height: 1065px;
+	}
+
+	.step {
+		max-height: 981px;
 	}
 
 	.lunch_view + .row {
 		margin: 0px!important;
+	}
+
+	#salad {
+		float: right;
 	}
 
 	.cart_price {
@@ -1376,6 +1457,15 @@ input::-webkit-inner-spin-button {
 	.right-footer-block-content:hover {
 		background-image: none;
 	}
+
+	#firstWrapper, #secondWrapper  {
+		width: calc(124px * 0.9);
+		height: calc(190px * 0.9);
+	}
+
+	#saladWrapper, #soupWrapper {
+    height: calc(135px * 0.9);
+	}
 }
 
 .tel-img {
@@ -1411,4 +1501,12 @@ input::-webkit-inner-spin-button {
 	border: 1px solid #ff6900;
 	background-color: #fff;
 	outline: none;
+}
+
+.dynamicov {
+	width: 100%;
+}
+
+.no-events {
+	pointer-events: none;
 }

@@ -47,7 +47,7 @@ $('.map_item').click(function () {
 })
 
 $(document).ready(function() {
-  $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+  // $("body").tooltip({ selector: '[data-toggle=tooltip]' });
   // $(function () {
   //   $('[data-toggle="popover"]').popover()
   // })
@@ -60,7 +60,8 @@ $(document).ready(function() {
 
 $(function () {
 	$('.menu_info').popover({
-	  container: 'body',
+		// container: 'body',
+		trigger: 'hover',
 		html: true,
 		content: '<div class="tooltip_content"><h6>Пищевая ценность на 100г</h6><div class="tooltip_content-container"><p>Энерг. ценность</p><p>214,3 ккал</p>				</div><div class="tooltip_content-container"><p>Энерг. ценность</p><p>214,3 ккал</p></div><div class="tooltip_content-container"><p>Энерг. ценность</p><p>214,3 ккал</p></div><div class="tooltip_content-container"><p>Энерг. ценность</p><p>214,3 ккал</p></div></div>'
   })
@@ -129,6 +130,13 @@ $('#choseModal').on('show.bs.modal', function (event) {
 	var modal = $(this)
 	let span = $('<div/>').append(modal.find('.modal_title').children('span').clone(true))
 	modal.find('.modal_title').html(`${dataItem.name}${$(span).html()}`)
+	$('.menu_info').popover('dispose')
+	$('.menu_info').popover({
+		// container: 'body',
+		trigger: 'hover',
+		html: true,
+		content: '<div class="tooltip_content"><h6>Пищевая ценность на 100г</h6><div class="tooltip_content-container"><p>Энерг. ценность</p><p>214,3 ккал</p>				</div><div class="tooltip_content-container"><p>Энерг. ценность</p><p>214,3 ккал</p></div><div class="tooltip_content-container"><p>Энерг. ценность</p><p>214,3 ккал</p></div><div class="tooltip_content-container"><p>Энерг. ценность</p><p>214,3 ккал</p></div></div>'
+  })
 	modal.find('.description').text(description)
 	if ($("input[name='size']").val()==1) {
 		modal.find('.price').text(price.replace('.', ','))

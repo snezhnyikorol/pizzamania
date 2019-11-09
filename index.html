@@ -184,28 +184,30 @@
 				<h1 class="section_title">Конструктор обеденного меню</h1>
 				<div class="row">
 					<div class="col-lg-3 lunch_info">
-						<div class="d-flex justify-content-center align-items-center">
-							<div id="firstWrapper" class="lunch_menu-main">
-								<img id="first" data-defaultSrc="assets/img/lunch_menu/first.png" src="assets/img/lunch_menu/first.png">
+						<div class="d-flex flex-column flex-sm-row flex-lg-column justify-content-center align-items-stretch">
+							<div class="d-flex justify-content-center align-items-center mr-0 mr-sm-4 mr-lg-0">
+								<div id="firstWrapper" class="lunch_menu-main">
+									<img id="first" data-defaultSrc="assets/img/lunch_menu/first.png" src="assets/img/lunch_menu/first.png">
+								</div>
+								<div id="secondWrapper" class="lunch_menu-main">
+									<img id="second" data-defaultSrc="assets/img/lunch_menu/second.png" src="assets/img/lunch_menu/second.png">
+								</div>
 							</div>
-							<div id="secondWrapper" class="lunch_menu-main">
-								<img id="second" data-defaultSrc="assets/img/lunch_menu/second.png" src="assets/img/lunch_menu/second.png">
+							<div class="d-flex flex-row flex-sm-column flex-lg-row justify-content-lg-between justify-content-around  ml-0 ml-sm-4 ml-lg-0">
+								<div id="saladWrapper" class="lunch_menu-dop">
+									<img id="salad" data-defaultSrc="assets/img/lunch_menu/salads.png" src="assets/img/lunch_menu/salads.png">
+								</div>
+								<div id="soupWrapper" class="lunch_menu-dop">
+									<img id="soup" data-defaultSrc="assets/img/lunch_menu/sup.png" src="assets/img/lunch_menu/sup.png">
+								</div>
 							</div>
 						</div>
-						<div class="d-flex justify-content-lg-between justify-content-around">
-							<div id="saladWrapper" class="lunch_menu-dop">
-								<img id="salad" data-defaultSrc="assets/img/lunch_menu/salads.png" src="assets/img/lunch_menu/salads.png">
-							</div>
-							<div id="soupWrapper" class="lunch_menu-dop">
-								<img id="soup" data-defaultSrc="assets/img/lunch_menu/sup.png" src="assets/img/lunch_menu/sup.png">
-							</div>
-						</div>
-						<div class="d-flex align-items-center justify-content-between mb-4">
+						<div class="d-flex align-items-lg-center align-items-end justify-content-between mb-4 flex-column flex-lg-row">
 							<h6>Вес: <span id="currentWeight">0</span> гр</h6>
 							<h6>пищевая ценность</h6>
 						</div>
 						<p id="lunch_required" class="mb-4">Вы не выбрали обязательное блюдо для комплекта — гарнир, горячее.</p>
-						<div class="product_price-container d-flex justify-content-between align-items-center">
+						<div class="product_price-container d-flex justify-content-lg-between justify-content-end align-items-center">
 							<h4><span id="currentPrice">0</span> руб</h4>
 							<a href="" class="lunch_basket btn btn-primary disabled">В корзину</a>
 						</div>
@@ -213,7 +215,7 @@
 					<div class="col-lg-9 lunch_selection container">
 						<h2 class="lunch_selection-title">Выберите гарнир</h2>
 						<div class="row step">
-							<div class="col-lg-4">
+							<div class="col-sm-4">
 								<article data-weight='120' class="lunch_menu-card">
 									<img src="./assets/img/lunch_menu/first/1.jpg" alt="">
 									<h5>Картофель жареный с грибами<span class="menu_info">?</span></h5>
@@ -221,7 +223,7 @@
 									<span class="lunch_menu-state"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="true" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M0.000,8.000 C0.000,3.582 3.582,0.000 8.000,0.000 C12.418,0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,15.999 8.000,15.999 C3.582,15.999 0.000,12.418 0.000,8.000 ZM8.001,11.259 L11.683,5.603 C11.981,5.307 11.983,4.825 11.686,4.526 C11.390,4.228 10.908,4.226 10.609,4.522 L7.464,9.646 L5.320,7.522 C5.021,7.226 4.539,7.228 4.242,7.526 C4.095,7.675 4.021,7.869 4.021,8.063 C4.021,8.259 4.096,8.454 4.246,8.603 L6.928,11.259 C7.225,11.554 7.704,11.554 8.001,11.259 Z" class="st0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="false" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M8.000,16.000 C3.582,16.000 -0.000,12.418 -0.000,8.000 C-0.000,3.582 3.582,-0.000 8.000,-0.000 C12.418,-0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,16.000 8.000,16.000 ZM11.535,5.879 L10.121,4.464 L8.000,6.586 L5.879,4.464 L4.464,5.879 L6.586,8.000 L4.464,10.121 L5.879,11.535 L8.000,9.414 L10.121,11.535 L11.535,10.121 L9.414,8.000 L11.535,5.879 Z" class="st0"></path></svg></span>
 								</article>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-sm-4">
 								<article data-weight='120' class="lunch_menu-card">
 									<img src="./assets/img/lunch_menu/first/1.jpg" alt="">
 									<h5>Картофель жареный с грибами<span class="menu_info">?</span></h5>
@@ -229,7 +231,7 @@
 									<span class="lunch_menu-state"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="true" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M0.000,8.000 C0.000,3.582 3.582,0.000 8.000,0.000 C12.418,0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,15.999 8.000,15.999 C3.582,15.999 0.000,12.418 0.000,8.000 ZM8.001,11.259 L11.683,5.603 C11.981,5.307 11.983,4.825 11.686,4.526 C11.390,4.228 10.908,4.226 10.609,4.522 L7.464,9.646 L5.320,7.522 C5.021,7.226 4.539,7.228 4.242,7.526 C4.095,7.675 4.021,7.869 4.021,8.063 C4.021,8.259 4.096,8.454 4.246,8.603 L6.928,11.259 C7.225,11.554 7.704,11.554 8.001,11.259 Z" class="st0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="false" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M8.000,16.000 C3.582,16.000 -0.000,12.418 -0.000,8.000 C-0.000,3.582 3.582,-0.000 8.000,-0.000 C12.418,-0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,16.000 8.000,16.000 ZM11.535,5.879 L10.121,4.464 L8.000,6.586 L5.879,4.464 L4.464,5.879 L6.586,8.000 L4.464,10.121 L5.879,11.535 L8.000,9.414 L10.121,11.535 L11.535,10.121 L9.414,8.000 L11.535,5.879 Z" class="st0"></path></svg></span>
 								</article>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-sm-4">
 								<article data-weight='120' class="lunch_menu-card">
 									<img src="./assets/img/lunch_menu/first/1.jpg" alt="">
 									<h5>Картофель жареный с грибами<span class="menu_info">?</span></h5>
@@ -239,7 +241,7 @@
 							</div>
 						</div>
 						<div class="row step">
-							<div class="col-lg-4">
+							<div class="col-sm-4">
 								<article data-weight='200' class="lunch_menu-card">
 									<img src="./assets/img/lunch_menu/second/1.jpg" alt="">
 									<h5>Шашлык из свиной шей<span class="menu_info">?</span></h5>
@@ -247,7 +249,7 @@
 									<span class="lunch_menu-state"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="true" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M0.000,8.000 C0.000,3.582 3.582,0.000 8.000,0.000 C12.418,0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,15.999 8.000,15.999 C3.582,15.999 0.000,12.418 0.000,8.000 ZM8.001,11.259 L11.683,5.603 C11.981,5.307 11.983,4.825 11.686,4.526 C11.390,4.228 10.908,4.226 10.609,4.522 L7.464,9.646 L5.320,7.522 C5.021,7.226 4.539,7.228 4.242,7.526 C4.095,7.675 4.021,7.869 4.021,8.063 C4.021,8.259 4.096,8.454 4.246,8.603 L6.928,11.259 C7.225,11.554 7.704,11.554 8.001,11.259 Z" class="st0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="false" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M8.000,16.000 C3.582,16.000 -0.000,12.418 -0.000,8.000 C-0.000,3.582 3.582,-0.000 8.000,-0.000 C12.418,-0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,16.000 8.000,16.000 ZM11.535,5.879 L10.121,4.464 L8.000,6.586 L5.879,4.464 L4.464,5.879 L6.586,8.000 L4.464,10.121 L5.879,11.535 L8.000,9.414 L10.121,11.535 L11.535,10.121 L9.414,8.000 L11.535,5.879 Z" class="st0"></path></svg></span>
 								</article>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-sm-4">
 								<article data-weight='200' class="lunch_menu-card">
 									<img src="./assets/img/lunch_menu/second/1.jpg" alt="">
 									<h5>Шашлык из свиной шей<span class="menu_info">?</span></h5>
@@ -255,7 +257,7 @@
 									<span class="lunch_menu-state"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="true" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M0.000,8.000 C0.000,3.582 3.582,0.000 8.000,0.000 C12.418,0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,15.999 8.000,15.999 C3.582,15.999 0.000,12.418 0.000,8.000 ZM8.001,11.259 L11.683,5.603 C11.981,5.307 11.983,4.825 11.686,4.526 C11.390,4.228 10.908,4.226 10.609,4.522 L7.464,9.646 L5.320,7.522 C5.021,7.226 4.539,7.228 4.242,7.526 C4.095,7.675 4.021,7.869 4.021,8.063 C4.021,8.259 4.096,8.454 4.246,8.603 L6.928,11.259 C7.225,11.554 7.704,11.554 8.001,11.259 Z" class="st0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="false" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M8.000,16.000 C3.582,16.000 -0.000,12.418 -0.000,8.000 C-0.000,3.582 3.582,-0.000 8.000,-0.000 C12.418,-0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,16.000 8.000,16.000 ZM11.535,5.879 L10.121,4.464 L8.000,6.586 L5.879,4.464 L4.464,5.879 L6.586,8.000 L4.464,10.121 L5.879,11.535 L8.000,9.414 L10.121,11.535 L11.535,10.121 L9.414,8.000 L11.535,5.879 Z" class="st0"></path></svg></span>
 								</article>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-sm-4">
 								<article data-weight='200' class="lunch_menu-card">
 									<img src="./assets/img/lunch_menu/second/1.jpg" alt="">
 									<h5>Шашлык из свиной шей<span class="menu_info">?</span></h5>
@@ -265,7 +267,7 @@
 							</div>
 						</div>
 						<div class="row step">
-							<div class="col-lg-4">
+							<div class="col-sm-4">
 								<article data-weight='50' class="lunch_menu-card">
 									<img src="./assets/img/lunch_menu/salad/1.jpg" alt="">
 									<h5>Салат с охотничьими колбасками<span class="menu_info">?</span></h5>
@@ -273,7 +275,7 @@
 									<span class="lunch_menu-state"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="true" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M0.000,8.000 C0.000,3.582 3.582,0.000 8.000,0.000 C12.418,0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,15.999 8.000,15.999 C3.582,15.999 0.000,12.418 0.000,8.000 ZM8.001,11.259 L11.683,5.603 C11.981,5.307 11.983,4.825 11.686,4.526 C11.390,4.228 10.908,4.226 10.609,4.522 L7.464,9.646 L5.320,7.522 C5.021,7.226 4.539,7.228 4.242,7.526 C4.095,7.675 4.021,7.869 4.021,8.063 C4.021,8.259 4.096,8.454 4.246,8.603 L6.928,11.259 C7.225,11.554 7.704,11.554 8.001,11.259 Z" class="st0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="false" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M8.000,16.000 C3.582,16.000 -0.000,12.418 -0.000,8.000 C-0.000,3.582 3.582,-0.000 8.000,-0.000 C12.418,-0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,16.000 8.000,16.000 ZM11.535,5.879 L10.121,4.464 L8.000,6.586 L5.879,4.464 L4.464,5.879 L6.586,8.000 L4.464,10.121 L5.879,11.535 L8.000,9.414 L10.121,11.535 L11.535,10.121 L9.414,8.000 L11.535,5.879 Z" class="st0"></path></svg></span>
 								</article>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-sm-4">
 								<article data-weight='50' class="lunch_menu-card">
 									<img src="./assets/img/lunch_menu/salad/1.jpg" alt="">
 									<h5>Салат с охотничьими колбасками<span class="menu_info">?</span></h5>
@@ -281,7 +283,7 @@
 									<span class="lunch_menu-state"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="true" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M0.000,8.000 C0.000,3.582 3.582,0.000 8.000,0.000 C12.418,0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,15.999 8.000,15.999 C3.582,15.999 0.000,12.418 0.000,8.000 ZM8.001,11.259 L11.683,5.603 C11.981,5.307 11.983,4.825 11.686,4.526 C11.390,4.228 10.908,4.226 10.609,4.522 L7.464,9.646 L5.320,7.522 C5.021,7.226 4.539,7.228 4.242,7.526 C4.095,7.675 4.021,7.869 4.021,8.063 C4.021,8.259 4.096,8.454 4.246,8.603 L6.928,11.259 C7.225,11.554 7.704,11.554 8.001,11.259 Z" class="st0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="false" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M8.000,16.000 C3.582,16.000 -0.000,12.418 -0.000,8.000 C-0.000,3.582 3.582,-0.000 8.000,-0.000 C12.418,-0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,16.000 8.000,16.000 ZM11.535,5.879 L10.121,4.464 L8.000,6.586 L5.879,4.464 L4.464,5.879 L6.586,8.000 L4.464,10.121 L5.879,11.535 L8.000,9.414 L10.121,11.535 L11.535,10.121 L9.414,8.000 L11.535,5.879 Z" class="st0"></path></svg></span>
 								</article>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-sm-4">
 								<article data-weight='50' class="lunch_menu-card">
 									<img src="./assets/img/lunch_menu/salad/1.jpg" alt="">
 									<h5>Салат с охотничьими колбасками<span class="menu_info">?</span></h5>
@@ -291,7 +293,7 @@
 							</div>
 						</div>
 						<div class="row step">
-							<div class="col-lg-4">
+							<div class="col-sm-4">
 								<article data-weight='100' class="lunch_menu-card">
 									<img src="./assets/img/lunch_menu/soup/1.jpg" alt="">
 									<h5>Борщ домашний<span class="menu_info">?</span></h5>
@@ -299,7 +301,7 @@
 									<span class="lunch_menu-state"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="true" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M0.000,8.000 C0.000,3.582 3.582,0.000 8.000,0.000 C12.418,0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,15.999 8.000,15.999 C3.582,15.999 0.000,12.418 0.000,8.000 ZM8.001,11.259 L11.683,5.603 C11.981,5.307 11.983,4.825 11.686,4.526 C11.390,4.228 10.908,4.226 10.609,4.522 L7.464,9.646 L5.320,7.522 C5.021,7.226 4.539,7.228 4.242,7.526 C4.095,7.675 4.021,7.869 4.021,8.063 C4.021,8.259 4.096,8.454 4.246,8.603 L6.928,11.259 C7.225,11.554 7.704,11.554 8.001,11.259 Z" class="st0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="false" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M8.000,16.000 C3.582,16.000 -0.000,12.418 -0.000,8.000 C-0.000,3.582 3.582,-0.000 8.000,-0.000 C12.418,-0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,16.000 8.000,16.000 ZM11.535,5.879 L10.121,4.464 L8.000,6.586 L5.879,4.464 L4.464,5.879 L6.586,8.000 L4.464,10.121 L5.879,11.535 L8.000,9.414 L10.121,11.535 L11.535,10.121 L9.414,8.000 L11.535,5.879 Z" class="st0"></path></svg></span>
 								</article>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-sm-4">
 								<article data-weight='100' class="lunch_menu-card">
 									<img src="./assets/img/lunch_menu/soup/1.jpg" alt="">
 									<h5>Борщ домашний<span class="menu_info">?</span></h5>
@@ -307,7 +309,7 @@
 									<span class="lunch_menu-state"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="true" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M0.000,8.000 C0.000,3.582 3.582,0.000 8.000,0.000 C12.418,0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,15.999 8.000,15.999 C3.582,15.999 0.000,12.418 0.000,8.000 ZM8.001,11.259 L11.683,5.603 C11.981,5.307 11.983,4.825 11.686,4.526 C11.390,4.228 10.908,4.226 10.609,4.522 L7.464,9.646 L5.320,7.522 C5.021,7.226 4.539,7.228 4.242,7.526 C4.095,7.675 4.021,7.869 4.021,8.063 C4.021,8.259 4.096,8.454 4.246,8.603 L6.928,11.259 C7.225,11.554 7.704,11.554 8.001,11.259 Z" class="st0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="false" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M8.000,16.000 C3.582,16.000 -0.000,12.418 -0.000,8.000 C-0.000,3.582 3.582,-0.000 8.000,-0.000 C12.418,-0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,16.000 8.000,16.000 ZM11.535,5.879 L10.121,4.464 L8.000,6.586 L5.879,4.464 L4.464,5.879 L6.586,8.000 L4.464,10.121 L5.879,11.535 L8.000,9.414 L10.121,11.535 L11.535,10.121 L9.414,8.000 L11.535,5.879 Z" class="st0"></path></svg></span>
 								</article>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-sm-4">
 								<article data-weight='100' class="lunch_menu-card">
 									<img src="./assets/img/lunch_menu/soup/1.jpg" alt="">
 									<h5>Борщ домашний<span class="menu_info">?</span></h5>
@@ -317,7 +319,7 @@
 							</div>
 						</div>
 						<div class="row step">
-							<div class="col-lg-4">
+							<div class="col-sm-4">
 								<article data-weight='120' class="lunch_menu-card">
 									<img src="./assets/img/lunch_menu/first/1.jpg" alt="">
 									<h5>Картофель жареный с грибами<span class="menu_info">?</span></h5>
@@ -325,7 +327,7 @@
 									<span class="lunch_menu-state"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="true" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M0.000,8.000 C0.000,3.582 3.582,0.000 8.000,0.000 C12.418,0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,15.999 8.000,15.999 C3.582,15.999 0.000,12.418 0.000,8.000 ZM8.001,11.259 L11.683,5.603 C11.981,5.307 11.983,4.825 11.686,4.526 C11.390,4.228 10.908,4.226 10.609,4.522 L7.464,9.646 L5.320,7.522 C5.021,7.226 4.539,7.228 4.242,7.526 C4.095,7.675 4.021,7.869 4.021,8.063 C4.021,8.259 4.096,8.454 4.246,8.603 L6.928,11.259 C7.225,11.554 7.704,11.554 8.001,11.259 Z" class="st0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="false" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M8.000,16.000 C3.582,16.000 -0.000,12.418 -0.000,8.000 C-0.000,3.582 3.582,-0.000 8.000,-0.000 C12.418,-0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,16.000 8.000,16.000 ZM11.535,5.879 L10.121,4.464 L8.000,6.586 L5.879,4.464 L4.464,5.879 L6.586,8.000 L4.464,10.121 L5.879,11.535 L8.000,9.414 L10.121,11.535 L11.535,10.121 L9.414,8.000 L11.535,5.879 Z" class="st0"></path></svg></span>
 								</article>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-sm-4">
 								<article data-weight='120' class="lunch_menu-card">
 									<img src="./assets/img/lunch_menu/first/1.jpg" alt="">
 									<h5>Картофель жареный с грибами<span class="menu_info">?</span></h5>
@@ -333,7 +335,7 @@
 									<span class="lunch_menu-state"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="true" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M0.000,8.000 C0.000,3.582 3.582,0.000 8.000,0.000 C12.418,0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,15.999 8.000,15.999 C3.582,15.999 0.000,12.418 0.000,8.000 ZM8.001,11.259 L11.683,5.603 C11.981,5.307 11.983,4.825 11.686,4.526 C11.390,4.228 10.908,4.226 10.609,4.522 L7.464,9.646 L5.320,7.522 C5.021,7.226 4.539,7.228 4.242,7.526 C4.095,7.675 4.021,7.869 4.021,8.063 C4.021,8.259 4.096,8.454 4.246,8.603 L6.928,11.259 C7.225,11.554 7.704,11.554 8.001,11.259 Z" class="st0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="false" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M8.000,16.000 C3.582,16.000 -0.000,12.418 -0.000,8.000 C-0.000,3.582 3.582,-0.000 8.000,-0.000 C12.418,-0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,16.000 8.000,16.000 ZM11.535,5.879 L10.121,4.464 L8.000,6.586 L5.879,4.464 L4.464,5.879 L6.586,8.000 L4.464,10.121 L5.879,11.535 L8.000,9.414 L10.121,11.535 L11.535,10.121 L9.414,8.000 L11.535,5.879 Z" class="st0"></path></svg></span>
 								</article>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-sm-4">
 								<article data-weight='120' class="lunch_menu-card">
 									<img src="./assets/img/lunch_menu/first/1.jpg" alt="">
 									<h5>Картофель жареный с грибами<span class="menu_info">?</span></h5>
@@ -343,7 +345,7 @@
 							</div>
 						</div>
 						<div class="row step">
-							<div class="col-lg-4">
+							<div class="col-sm-4">
 								<article data-weight='120' class="lunch_menu-card">
 									<img src="./assets/img/lunch_menu/first/1.jpg" alt="">
 									<h5>Картофель жареный с грибами<span class="menu_info">?</span></h5>
@@ -351,7 +353,7 @@
 									<span class="lunch_menu-state"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="true" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M0.000,8.000 C0.000,3.582 3.582,0.000 8.000,0.000 C12.418,0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,15.999 8.000,15.999 C3.582,15.999 0.000,12.418 0.000,8.000 ZM8.001,11.259 L11.683,5.603 C11.981,5.307 11.983,4.825 11.686,4.526 C11.390,4.228 10.908,4.226 10.609,4.522 L7.464,9.646 L5.320,7.522 C5.021,7.226 4.539,7.228 4.242,7.526 C4.095,7.675 4.021,7.869 4.021,8.063 C4.021,8.259 4.096,8.454 4.246,8.603 L6.928,11.259 C7.225,11.554 7.704,11.554 8.001,11.259 Z" class="st0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="false" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M8.000,16.000 C3.582,16.000 -0.000,12.418 -0.000,8.000 C-0.000,3.582 3.582,-0.000 8.000,-0.000 C12.418,-0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,16.000 8.000,16.000 ZM11.535,5.879 L10.121,4.464 L8.000,6.586 L5.879,4.464 L4.464,5.879 L6.586,8.000 L4.464,10.121 L5.879,11.535 L8.000,9.414 L10.121,11.535 L11.535,10.121 L9.414,8.000 L11.535,5.879 Z" class="st0"></path></svg></span>
 								</article>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-sm-4">
 								<article data-weight='120' class="lunch_menu-card">
 									<img src="./assets/img/lunch_menu/first/1.jpg" alt="">
 									<h5>Картофель жареный с грибами<span class="menu_info">?</span></h5>
@@ -359,7 +361,7 @@
 									<span class="lunch_menu-state"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="true" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M0.000,8.000 C0.000,3.582 3.582,0.000 8.000,0.000 C12.418,0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,15.999 8.000,15.999 C3.582,15.999 0.000,12.418 0.000,8.000 ZM8.001,11.259 L11.683,5.603 C11.981,5.307 11.983,4.825 11.686,4.526 C11.390,4.228 10.908,4.226 10.609,4.522 L7.464,9.646 L5.320,7.522 C5.021,7.226 4.539,7.228 4.242,7.526 C4.095,7.675 4.021,7.869 4.021,8.063 C4.021,8.259 4.096,8.454 4.246,8.603 L6.928,11.259 C7.225,11.554 7.704,11.554 8.001,11.259 Z" class="st0"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="false" preserveAspectRatio="xMidYMid" width="16" height="16" viewBox="0 0 16 16"><path d="M8.000,16.000 C3.582,16.000 -0.000,12.418 -0.000,8.000 C-0.000,3.582 3.582,-0.000 8.000,-0.000 C12.418,-0.000 16.000,3.582 16.000,8.000 C16.000,12.418 12.418,16.000 8.000,16.000 ZM11.535,5.879 L10.121,4.464 L8.000,6.586 L5.879,4.464 L4.464,5.879 L6.586,8.000 L4.464,10.121 L5.879,11.535 L8.000,9.414 L10.121,11.535 L11.535,10.121 L9.414,8.000 L11.535,5.879 Z" class="st0"></path></svg></span>
 								</article>
 							</div>
-							<div class="col-lg-4">
+							<div class="col-sm-4">
 								<article data-weight='120' class="lunch_menu-card">
 									<img src="./assets/img/lunch_menu/first/1.jpg" alt="">
 									<h5>Картофель жареный с грибами<span class="menu_info">?</span></h5>
@@ -423,16 +425,9 @@
 							<img class="tel-img" src="./assets/img/icons/phone.svg">
 							<p>7558</p>
 						</a>
-						<!-- <a href="">
-							<img class="dynamicov_logo" src="">
-						</a> -->
-						<div class="right-footer-block">
-							<p>Сделано в</p>
-							<a href="https://dynamicov.ru/" target="_blank" class="right-footer-block-content">
-								<img src="./assets/img/dynamicov.svg" alt="">
-								<p>Dynamicov.</p>
-							</a>
-						</div>
+						<a href="https://dynamicov.ru/" target="_blank">
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 235 58"><g><g><g><text dominant-baseline="text-before-edge" style="line-height:40px" fill="#fff" font-family="'Rounded Mplus 1c'" font-size="30" font-style="none" font-weight="700" transform="translate(56 20)"><tspan style="font-kerning:normal" letter-spacing=".3">Dynamicov.</tspan></text></g></g><g opacity=".5"><path fill="#00f" d="M11 20c6.075 0 11 4.925 11 11s-4.925 11-11 11S0 37.075 0 31s4.925-11 11-11z"/></g><g opacity=".7"><path fill="#00f" d="M19 17c7.732 0 14 6.268 14 14s-6.268 14-14 14S5 38.732 5 31s6.268-14 14-14z"/></g><g><path fill="#00f" d="M28 14c9.389 0 17 7.611 17 17s-7.611 17-17 17-17-7.611-17-17 7.611-17 17-17z"/></g><g opacity=".5"><g><text fill="#fff" dominant-baseline="text-before-edge" font-family="'Rounded Mplus 1c'" font-size="16" font-style="none" font-weight="400" transform="translate(53)"><tspan style="font-kerning:normal" letter-spacing=".16">Сделано в</tspan></text></g></g></g></svg>
+						</a>
 					</div>
 					<div class="footer_info mx-auto text-center order-4" style="max-width: 550px;">
 						<p>Мы не продаем алкогольную продукцию лицам младше 18 лет. Все цены в меню указаны без учета скидок. Скидки действуют только на продукцию собственного производства!</p>
