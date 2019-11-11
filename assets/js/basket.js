@@ -1,47 +1,70 @@
 // ------------------------------------BASKET-----------------------------------
 
-let data = {
-	count: 1,
-	price: 300,
-	0: {
-		image: "./assets/img/pizza_img.png",
-		name: "Пицца",
-		size: "30см",
-		price: "300",
-		count: 3
-	}
-};
+// let data = {
+// 	count: 1,
+// 	price: 300,
+// 	0: {
+// 		image: "./assets/img/pizza_img.png",
+// 		name: "Пицца",
+// 		size: "30см",
+// 		price: "300",
+// 		count: 3
+// 	}
+// };
+let data = cart.data;
 
 let basketSvg = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M14.75 6H5.25L5.90993 15.8047C5.97132 16.8184 6.50848 17.5 7.39863 17.5H12.6014C13.4915 17.5 14.0133 16.8184 14.0901 15.8047L14.75 6Z" fill="#373535"></path>
 <path d="M13.8498 3.00681L6.19643 3.00688C4.98382 2.88702 5.02127 4.36489 5 5L14.9917 4.99999C15.0165 4.38088 15.0624 3.12667 13.8498 3.00681Z" fill="#373535"></path>
 </svg>`;
 
-function addPizza(image, name, size, price, count) {
-	data.count++;
-	data.price = (Math.round(data.price*100) + Math.round(price*100))/100;
-	data[data.count-1] = {
-		image: image,
-		name: name,
-		size: size,
-		price: price,
-		count: count
-	};
+function increaseItem(id) {
+	let count = cart.getItemById(id).count;
+	count++;
+	cart.updateItemCountById(id, count);
+	$('[data-id='+id+']').filter('.basket_item').find('.basket_count').text(count);
+	$('[data-id='+id+']').filter('.basket_item').find('.price_value').text((cart.getItemById(id).price * count).toString().replace('.', ','));
+	$('#totalPrice').text(data.price.toString().replace('.', ','));
 }
 
-function generatePizza(image, name, size, price, count, id) {
-	return `<div class="basket_item" data-type="pizza" data-id=${id} data-name=${name} data-size=${size} data-price=${price} data-count="1">
+function decreaseItem(id) {
+	let count = cart.getItemById(id).count;
+	count--;
+	if (count === 0) {
+		deleteItem(id);
+	} else {
+		cart.updateItemCountById(id, count);
+		$('[data-id='+id+']').filter('.basket_item').find('.basket_count').text(count);
+		$('[data-id='+id+']').filter('.basket_item').find('.price_value').text((cart.getItemById(id).price * count).toString().replace('.', ','));
+		$('#totalPrice').text(data.price.toString().replace('.', ','));
+	}
+}
+
+function generateItem(item) {
+	let subtitle = "";
+	if (item.hasOwnProperty('components')) {
+		for (const index in item.components) {
+			if (item.components.hasOwnProperty(index)) {
+				const component = item.components[index];
+				subtitle = subtitle + `${component.name}<br>`;
+			}
+		}
+		subtitle = subtitle.slice(0, subtitle.length - 4);
+	} else {
+		subtitle = item.size;
+	}
+	return `<div class="basket_item" data-id=${item.id}>
   <div class="row">
   <div class="col-4 basket_img">
-    <img src=${image} alt=${name}>
+    <img src=${item.image} alt=${item.name}>
   </div>
   <div class="col-8 basket_content container">
     <div class="row">
       <div class="col-10">
-        <h3 class="basket_title">${name}</h3>
-        <h5 class="basket_subtitle">${size}</h5>
+        <h3 class="basket_title">${item.name}</h3>
+        <h5 class="basket_subtitle">${subtitle}</h5>
       </div>
-      <div data-id=${id} class="col-2 px-0 d-flex justify-content-center align-items-start basket_delete" onclick='deleteItem(${id})'>
+      <div class="col-2 px-0 d-flex justify-content-center align-items-start basket_delete" onclick="deleteItem('${item.id}')">
         ${basketSvg}
       </div>
     </div>
@@ -49,16 +72,16 @@ function generatePizza(image, name, size, price, count, id) {
       <div class="col-12">
         <div class="row">
           <div class="col-6 amount_container d-flex justify-content-start align-items-center">
-            <div class="amount_changer">
+            <div class="amount_changer" onclick="decreaseItem('${item.id}')">
               <span>–</span>
             </div>
-            <h6 class="mx-1">${count}</h6>
-            <div class="amount_changer">
+            <h6 class="mx-1"><span class="basket_count">${item.count}</span></h6>
+            <div class="amount_changer" onclick="increaseItem('${item.id}')">
               <span>+</span>
             </div>
           </div>
           <div class="col-6">
-            <p class="basket_popover-price text-right">${price} руб</p>
+            <p class="basket_popover-price text-right"><span class="price_value">${(Math.round(item.price*100) * item.count / 100).toString().replace('.', ',')}</span> руб</p>
           </div>
         </div>
       </div>
@@ -90,43 +113,25 @@ function generateBasket() {
 		</div>
 		</div>
 		</div>`);
-		let index = 0;
-		for (const key in data) {
-			if (data.hasOwnProperty(key)) {
-				const element = data[key];
-				if (!(isNaN(parseInt(key)))) {
-					let item = generatePizza(element.image, element.name, element.size, element.price, element.count, index);
-					$(temp).find('.basket_body').append(item);
-					index++;
-				}
+		const items = data.items;
+		for (const index in items) {
+			if (items.hasOwnProperty(index)) {
+				const item = items[index];
+				let busketItem = generateItem(item);
+				$(temp).find('.basket_body').append(busketItem);
 			}
 		}
-
-		// for (let index = 0; index < data.count; index++) {
-		// 	const element = data[index];
-		// 	console.log(element)
-		// 	let item = generatePizza(element.image, element.name, element.size, element.price, element.count, index);
-		// 	$(temp).find('.basket_body').append(item);
-		// }
 		return $(temp).html();
 	}
 }
 
-// $('.basket_delete').click(function (event) {
-// 	event.preventDefault();
-// 	console.log(111111,$(`[data-id]=${this.dataset.id}`));
-// 	// let item = $(`[data-id]=${this.dataset.id}`);
-// 	// data.count--;
-// 	// data.price;
-// })
 
-function deleteItem(index) {
-	item = $('[data-id='+index+']').filter('.basket_item');
-	data.count--;
-	data.price = (Math.round(data.price*100) - Math.round(parseFloat($(item).attr('data-price'))*100))/100;
+function deleteItem(id) {
+	let item = $('[data-id='+id+']').filter('.basket_item');
+	console.log(item);
+	cart.deleteItemById(id);
 	$('#totalPrice').text(data.price.toString().replace('.', ','))
 	$(item).remove();
-	delete data[index];
 	if (data.count == 0) {
 		$('.basket_popover').html(`<div class="arrow"></div>
 		<div class="basket_body d-flex justify-content-center align-items-center">
@@ -168,7 +173,7 @@ $('#basket').popover({
 $('#basket').mouseenter(
   function(){
 		let isOver = false;
-    $('#basket').popover('show');
+		$('#basket').popover('show');
     $('.basket_popover').mouseleave(
       function(){
         $('#basket').popover('hide')
@@ -191,11 +196,13 @@ $('#basket').mouseenter(
   }
 )
 
-// if (window.matchMedia("(max-width: 992px)").matches) {
-// 	$('.btn_basket-mobile').removeClass('d-none');
-// } else {
-// 	$('.btn_basket-mobile').addClass('d-none');
-// }
+// $('.basket_delete').on('click', function(e) {
+// 	$(this).trigger('delete');
+// })
+// $('.basket_item').on('delete', function() {
+// 	console.log('Delete handling')
+// 	deleteItem(this);
+// })
 
 // -----------------BASKET END----------------------------
 

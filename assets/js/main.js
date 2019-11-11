@@ -1,12 +1,23 @@
 var $root = $('html, body');
 
-// $('a[href^="#"]').click(function () {
-//     $root.animate({
-//         scrollTop: $( $.attr(this, 'href') ).offset().top - 100
-//     }, 500);
+$('.nav_item').click(function () {
 
-//     return false;
-// });
+    $root.animate({
+        scrollTop: $( $.attr(this, 'href').slice($.attr(this, 'href').indexOf('#')) ).offset().top - 30
+    }, 500);
+
+    return false;
+});
+
+$('.map_item').click(function () {
+
+	$root.animate({
+		scrollTop: $( $.attr(this, 'href').slice($.attr(this, 'href').indexOf('#')) ).offset().top - 30
+}, 500);
+
+	return false;
+});
+
 
 let menuState = false;
 
@@ -88,7 +99,7 @@ dataItem = {
 	image: "",
 	name: "",
 	size: 0,
-	price: "",
+	price: 0,
 	count: 1
 }
 
@@ -127,6 +138,7 @@ $('#choseModal').on('show.bs.modal', function (event) {
 	dataItem.size = '30см'
 	dataItem.name = button.data('name')
 	dataItem.image = button.data('img')
+	dataItem.id = button.data('id')
 	var modal = $(this)
 	let span = $('<div/>').append(modal.find('.modal_title').children('span').clone(true))
 	modal.find('.modal_title').html(`${dataItem.name}${$(span).html()}`)
@@ -147,7 +159,14 @@ $('#choseModal').on('show.bs.modal', function (event) {
 
 $('#modal_accept').click(function (event) {
 	event.preventDefault();
-	addPizza(dataItem.image, dataItem.name, dataItem.size, dataItem.price, dataItem.count);
+	cart.addItem({
+		image : dataItem.image,
+		name : dataItem.name,
+		size : dataItem.size,
+		price : dataItem.price,
+		count : dataItem.count,
+		id : dataItem.id + dataItem.size,
+	});
 	updateBasket();
 	$('#choseModal').modal('hide');
 })

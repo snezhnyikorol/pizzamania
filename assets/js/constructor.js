@@ -1,102 +1,3 @@
-// // constructor
-// let stateList = {
-//     1: 'lunch_first',
-//     2: 'lunch_second',
-//     3: 'lunch_salad',
-//     4: 'lunch_soup'
-// }
-
-// let state = 1;
-
-// function getPosition(param) {
-//     return(param.slice(6));
-// }
-
-// // let pickedItem = '';
-
-// $('#lunch_second').toggle();
-// $('#lunch_salad').toggle();
-// $('#lunch_soup').toggle();
-
-// $('#first').click(function() {
-//     if (state != 1) {
-//         $('#' + stateList[state]).fadeToggle('fast');
-//         $('#lunch_first').fadeToggle('fast');
-//         state = 1;
-//         $('.launch_view').css('height', $('#' + stateList[state]).outerHeight());
-//         // pickedItem = '';
-//     }
-// })
-
-// $('#second').click(function() {
-//     if (state != 2) {
-//         $('#' + stateList[state]).fadeToggle('fast');
-//         $('#lunch_second').fadeToggle('fast');
-//         state = 2;
-//         $('.launch_view').css('height', $('#' + stateList[state]).outerHeight());
-//         // pickedItem = '';
-//     }
-// })
-
-// $('#salad').click(function() {
-//     if (state != 3) {
-//         $('#' + stateList[state]).fadeToggle('fast');
-//         $('#lunch_salad').fadeToggle('fast');
-//         state = 3;
-//         $('.launch_view').css('height', $('#' + stateList[state]).outerHeight());
-//         // pickedItem = '';
-//     }
-// })
-
-// $('#soup').click(function() {
-//     if (state != 4) {
-//         $('#' + stateList[state]).fadeToggle('fast');
-//         $('#lunch_soup').fadeToggle('fast');
-//         state = 4;
-//         $('.launch_view').css('height', $('#' + stateList[state]).outerHeight());
-//         // pickedItem = '';
-//     }
-// })
-
-// // item
-
-// $('.lunch_menu-card').click(function(e) {
-//     // pickedItem = $(this).find('img').attr('src');
-// 		// $('#' + getPosition(stateList[state])).attr('src', pickedItem.slice(0, -4) + '_' + '.jpg');
-// 		if (!$(e.target).hasClass('menu_info')) {
-// 			$('#' + getPosition(stateList[state])).attr('src', $(this).find('img').attr('src').slice(0, -4) + '_' + '.jpg');
-// 		}
-// })
-
-// $('.lunch_next').click(function(event) {
-//     // if (pickedItem != '') {
-//         if (state < 4) {
-//             $('#' + stateList[state]).fadeToggle('fast');
-//             state++;
-//             $('#' + stateList[state]).fadeToggle('fast');
-//             // pickedItem = '';
-//             $('.launch_view').css('height', $('#' + stateList[state]).outerHeight());
-//         }
-//     // }
-//     event.preventDefault();
-// })
-
-// $('.lunch_prev').click(function(event) {
-//     if (state > 1) {
-//         $('#' + stateList[state]).fadeToggle('fast');
-//         state--;
-//         $('#' + stateList[state]).fadeToggle('fast');
-//         // pickedItem = '';
-//         $('.launch_view').css('height', $('#' + stateList[state]).outerHeight());
-//     }
-
-//     event.preventDefault();
-// })
-
-
-// // TODO: добавить проверку обязательного выьора первых двух блюд и возможность добавки в корзину без опциональных
-
-
 var currentStep = 0;
 let steps = $('.step');
 let titles = ['Выберите гарнир', 'Выберите горячее', 'Выберите салат', 'Выберите суп', 'Выберите хлеб', 'Выберите напиток'];
@@ -107,6 +8,17 @@ let currentItems = {
 	3: null,
 	4: null,
 	5: null
+}
+
+let lunchItem = {
+	name: "Обед",
+	price: 0,
+	count: 1,
+	id: 'lunch',
+	image: './assets/img/lunch_menu/first/1.jpg',
+	components: {
+
+	},
 }
 
 let info = {
@@ -240,6 +152,10 @@ $('.lunch_menu-card').click(function(event) {
 function addInfo(item) {
 	info.price = (Math.round(info.price*100) + Math.round(parseFloat($(item).find('.lunch_menu-price').text().replace(',', '.'))*100))/100;
 	info.weight = (Math.round(info.weight*100) + Math.round(parseFloat($(item).attr('data-weight'))*100))/100;
+	lunchItem.components[$(item).data('id')] = {
+		name: $(item).data('name'),
+		price: $(item).data('price'),
+	};
 	switch (currentStep) {
 		case 0:
 			$('#first').attr('src', $(item).find('img').attr('src'));
@@ -266,6 +182,7 @@ function addInfo(item) {
 function deleteInfo(item) {
 	info.price = (Math.round(info.price*100) - Math.round(parseFloat($(item).find('.lunch_menu-price').text().replace(',', '.'))*100))/100;
 	info.weight = (Math.round(info.weight*100) - Math.round(parseFloat($(item).attr('data-weight'))*100))/100;
+	delete lunchItem.components[$(item).data('id')];
 	switch (currentStep) {
 		case 0:
 			$('#first').attr('src', $('#first').attr('data-defaultSrc'));
@@ -302,3 +219,10 @@ function checkText() {
 		$(text).text('');
 	}
 }
+
+$('.lunch_basket').on('click', function(event) {
+	event.preventDefault();
+	lunchItem.price = info.price;
+	cart.addItem(lunchItem);
+	updateBasket();
+})
