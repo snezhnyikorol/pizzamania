@@ -2,10 +2,10 @@ let data =  cart.data;
 
 let drink = `
 <div class="row">
-	<div class="col-7 col-sm-6 order-1 product_text-container">
+	<div class="col-8 col-sm-6 order-1 product_text-container">
 		<h5>Вы забыли добавить напиток.<br>Желаете выбрать?</h5>
 	</div>
-	<div class="col-5 offset-sm-2 col-sm-3 d-flex align-items-center justify-content-sm-start justify-content-end order-2 order-sm-3">
+	<div class="col-4 col-sm-5 offset-sm-2 col-sm-3 d-flex align-items-center justify-content-sm-start justify-content-end order-2 order-sm-3">
 		<h4 class="cart_price"><a class="btn btn-primary mt-2" href="index.html#drinks">Выбрать</a></h4>
 	</div>
 </div>`
@@ -52,7 +52,7 @@ function generateItem(item) {
 	}
 	return `
 	<div class="row" data-id="${item.id}">
-		<div class="col-7 col-sm-6 order-1 product_text-container">
+		<div class="col-10 col-sm-6 order-1 product_text-container">
 			<h5>${item.name}</h5>
 			<p class="pt-1 pb-0">${subtitle}</p>
 		</div>
@@ -65,10 +65,10 @@ function generateItem(item) {
 				<span>+</span>
 			</div>
 		</div>
-		<div class="col-5 col-sm-3 d-flex align-items-center justify-content-sm-start justify-content-end order-2 order-sm-3">
+		<div class="col-8 col-sm-3 d-flex align-items-center justify-content-sm-start justify-content-end order-4 order-sm-3">
 			<h4 class="cart_price"><span class="price_value">${(Math.round(item.price*100) * item.count / 100).toString().replace('.', ',')}</span> руб.</h4>
 		</div>
-		<div class="col-2 offset-5 offset-sm-0 col-sm-1 d-flex align-items-center order-4 mt-2 mt-sm-0">
+		<div class="col-2 col-sm-1 d-flex align-items-start align-items-sm-center order-2 order-sm-4 mt-2 mt-sm-0">
 			<div class="cart__line-delete-icon" onclick="deleteItem('${item.id}')"></div>
 		</div>
 	</div>`
