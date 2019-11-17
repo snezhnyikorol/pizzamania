@@ -230,10 +230,14 @@ $('.promocode_button').click(function(e) {
 	e.preventDefault();
   let form_data = $('.promocode_input').val();
   let url;
-  let posting = $.post(url, form_data);
-  posting.done(function(data) {
 
-	})
+	$.ajax({
+		type: '',
+		url: url,
+		data: form_data,
+		success: success,
+		dataType: ''
+	});
 	if (true) {
 		$('.promocode_input').popover({
 			container: 'body',
