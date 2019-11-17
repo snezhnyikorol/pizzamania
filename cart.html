@@ -43,11 +43,11 @@
 					</div>
 				</header>
 
-				<nav>
+				<nav class="sticky fixed">
 					<div class="container d-lg-block d-none">
 						<div class="row">
 							<div class="col-lg-10 col-xl-9">
-								<div class="h-100 d-flex align-items-center justify-content-between">
+								<div class="h-100 d-flex align-items-center justify-content-between menu">
 									<a class="nav_item" href="index.html#pizza">Пиццы</a>
 									<a class="nav_item" href="index.html#lunch_menu">Обеденное меню</a>
 									<a class="nav_item" href="index.html">Салаты</a>
@@ -107,27 +107,6 @@
 					<button class="promocode_button">Применить</button>
 				</div>
 				<div class="cart_list">
-						<div class="row">
-							<div class="col-7 col-sm-6 order-1 product_text-container">
-								<h5>Пепперони Фреш с перцем</h5>
-								<p class="pt-1 pb-0">Традиционное, 25 см</p>
-							</div>
-							<div class="col-4 col-sm-2 amount_container d-flex justify-content-start align-items-center order-3 order-sm-2 mt-2 mt-sm-0">
-								<div class="amount_changer">
-									<span>–</span>
-								</div>
-								<h6 class="mx-2">1</h6>
-								<div class="amount_changer">
-									<span>+</span>
-								</div>
-							</div>
-							<div class="col-5 col-sm-3 d-flex align-items-center justify-content-sm-start justify-content-end order-2 order-sm-3">
-								<h4 class="cart_price">7.40 руб.</h4>
-							</div>
-							<div class="col-2 offset-5 offset-sm-0 col-sm-1 d-flex align-items-center order-4 mt-2 mt-sm-0">
-								<div class="cart__line-delete-icon"></div>
-							</div>
-						</div>
 				</div>
 				<div class="cart_souces">
 					<h3 class="mb-4">Соусы</h3>
@@ -136,21 +115,21 @@
 							<img class="img-fluid" src="https://dodopizza-a.akamaihd.net/static/Img/Products/Sauces/ru-RU/cb8e92ef-c963-4ebe-991a-a5af75b1037a.jpg">
 							<h6 class="">Сырный</h6>
 							<h6 class="mt-2">0,70 руб.</h6>
-							<a class="btn btn_basket mt-2" href="">В корзину</a>
+							<a class="btn btn-primary mt-2" data-name="Сырный" data-id="s1" data-price="0.70" data-image="https://dodopizza-a.akamaihd.net/static/Img/Products/Sauces/ru-RU/cb8e92ef-c963-4ebe-991a-a5af75b1037a.jpg" href="">В корзину</a>
 						</div>
 						<div class="col-md-3 col-6">
 							<img class="img-fluid" src="https://dodopizza-a.akamaihd.net/static/Img/Products/Sauces/ru-RU/cb8e92ef-c963-4ebe-991a-a5af75b1037a.jpg">
 							<h6 class="">Сырный</h6>
 							<h6 class="mt-2">0,70 руб.</h6>
-							<a class="btn btn_basket mt-2" href="">В корзину</a>
+							<a class="btn btn-primary mt-2" data-name="Сырный" data-id="s2" data-price="0.70" data-image="https://dodopizza-a.akamaihd.net/static/Img/Products/Sauces/ru-RU/cb8e92ef-c963-4ebe-991a-a5af75b1037a.jpg" href="">В корзину</a>
 						</div>
 					</div>
 				</div>
 				<div class="cart_cost-container text-right">
-					<h5 class="cart_cost">Сумма заказа: <span>7,40 руб.</span></h5>
+					<h5 class="cart_cost">Сумма заказа: <span><span id="totalPrice">7,40</span> руб.</span></h5>
 				</div>
 				<div class="cart_btn-container d-flex justify-content-between align-items-center">
-					<a class="btn btn_basket" href="">Вернуться в меню</a>
+					<a class="btn btn_basket" href="index.html">Вернуться в меню</a>
 					<a class="btn btn_basket" href="" data-toggle="modal" data-target="#orderModal">Заказать</a>
 				</div>
 			</div>
@@ -196,29 +175,6 @@
 				</div>
 			</footer>
 
-		<!-- <article class="basket_tooltip">
-			<div class="container">
-				<div class="tooltip_container">
-					<div class="row">
-						<div class="col-3"><img src=""></div>
-						<div class="col-lg-7">
-							<h3></h3>
-						</div>
-						<div class="col-lg-2">
-							<img src="">
-						</div>
-						<hr>
-						<div class="col-lg-12">
-							<div class="d-flex justify-content-between align-items-center">
-								<p>Сумма заказа</p>
-								<p>0.00 руб</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</article> -->
-
 		<div class="modal fade cart_modal" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
 			<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 			  <div class="modal-content">
@@ -239,7 +195,7 @@
 						</div>
 					</nav>
 					<div class="tab-content" id="nav-tabContent">
-						<div class="tab-pane fade show active col-lg-8" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+						<div class="tab-pane fade show active col-12" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 								<div class="row">
 									<div class="col-lg-9 cart_modal-col">
 										<input class="cart_modal-input" type="text" name="" placeholder="ebu v rot">
@@ -266,7 +222,7 @@
 									<a class="btn btn_basket ml-2 mt-4" data-toggle="modal" data-target="#phoneModal" href="">Подтвердить адрес</a>
 								 </div>
 						</div>
-						<div class="tab-pane fade col-lg-8" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+						<div class="tab-pane fade col-12" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
 								<div class="row">
 									<div class="col-lg-6 cart_modal-container">
 										<label class="radio">
@@ -333,7 +289,8 @@
 		<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.bundle.js"></script>
 		<script type="text/javascript" src="vendor/slick/slick.min.js"></script>
 		<script type="text/javascript" src="assets/js/logicCart.js"></script>
-		<script type="text/javascript" src="assets/js/basket.js"></script>
+		<!-- <script type="text/javascript" src="assets/js/basket.js"></script> -->
+		<script type="text/javascript" src="assets/js/cart.js"></script>
 		<script type="text/javascript" src="assets/js/main.js"></script>
 
 	</body>

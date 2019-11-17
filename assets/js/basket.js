@@ -11,12 +11,36 @@
 // 		count: 3
 // 	}
 // };
-let data = cart.data;
 
-let basketSvg = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M14.75 6H5.25L5.90993 15.8047C5.97132 16.8184 6.50848 17.5 7.39863 17.5H12.6014C13.4915 17.5 14.0133 16.8184 14.0901 15.8047L14.75 6Z" fill="#373535"></path>
-<path d="M13.8498 3.00681L6.19643 3.00688C4.98382 2.88702 5.02127 4.36489 5 5L14.9917 4.99999C15.0165 4.38088 15.0624 3.12667 13.8498 3.00681Z" fill="#373535"></path>
-</svg>`;
+
+let data =  cart.data;
+
+
+
+// document.addEventListener('cartAvailable', function() {
+// 	$('#basket').popover('dispose');
+
+// 	updateBasket();
+
+
+// 	$('#basket').popover({
+// 		container: 'body',
+// 		content: 'hellooooooooooooo',
+// 		placement: 'bottom',
+// 		title: 'hello',
+// 		trigger: 'manual',
+// 		template: basketTemplate,
+// 		// boundary: document.getElementById('actions_slider').children[0]
+// 	})
+
+// })
+
+// let basketSvg = `<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+// <path d="M14.75 6H5.25L5.90993 15.8047C5.97132 16.8184 6.50848 17.5 7.39863 17.5H12.6014C13.4915 17.5 14.0133 16.8184 14.0901 15.8047L14.75 6Z" fill="#373535"></path>
+// <path d="M13.8498 3.00681L6.19643 3.00688C4.98382 2.88702 5.02127 4.36489 5 5L14.9917 4.99999C15.0165 4.38088 15.0624 3.12667 13.8498 3.00681Z" fill="#373535"></path>
+// </svg>`;
+
+let basketSvg = `<img src="./assets/img/icons/delete.svg">`
 
 function increaseItem(id) {
 	let count = cart.getItemById(id).count;
@@ -51,8 +75,15 @@ function generateItem(item) {
 		}
 		subtitle = subtitle.slice(0, subtitle.length - 4);
 	} else {
-		subtitle = item.size;
+		if (item.hasOwnProperty('size')) {
+			subtitle = item.size;
+		} else {
+			subtitle = '';
+		}
+
 	}
+	console.log(item)
+	let template = $()
 	return `<div class="basket_item" data-id=${item.id}>
   <div class="row">
   <div class="col-4 basket_img">
@@ -91,6 +122,8 @@ function generateItem(item) {
 </div>`
 }
 
+let basketTemplate;
+
 function generateBasket() {
 	if (data.count == 0) {
 		return `<div class="container popover basket_popover">
@@ -117,18 +150,17 @@ function generateBasket() {
 		for (const index in items) {
 			if (items.hasOwnProperty(index)) {
 				const item = items[index];
-				let busketItem = generateItem(item);
-				$(temp).find('.basket_body').append(busketItem);
+				// let busketItem = generateItem(item);
+				$(temp).find('.basket_body').append(generateItem(item));
 			}
 		}
-		return $(temp).html();
+		return temp.html();
 	}
 }
 
 
 function deleteItem(id) {
 	let item = $('[data-id='+id+']').filter('.basket_item');
-	console.log(item);
 	cart.deleteItemById(id);
 	$('#totalPrice').text(data.price.toString().replace('.', ','))
 	$(item).remove();
@@ -141,11 +173,12 @@ function deleteItem(id) {
 	}
 }
 
-let basketTemplate;
+
 
 function updateBasket() {
 	$('#basket').popover('dispose')
 	basketTemplate = generateBasket();
+	console.log(basketTemplate)
 	$('#basket').popover({
 		container: 'body',
 		content: 'hellooooooooooooo',
@@ -157,17 +190,18 @@ function updateBasket() {
 	})
 }
 
+
 updateBasket();
 
 
 $('#basket').popover({
-  container: 'body',
-  content: 'hellooooooooooooo',
-  placement: 'bottom',
-  title: 'hello',
-  trigger: 'manual',
-  template: basketTemplate,
-  // boundary: document.getElementById('actions_slider').children[0]
+	container: 'body',
+	content: 'hellooooooooooooo',
+	placement: 'bottom',
+	title: 'hello',
+	trigger: 'manual',
+	template: basketTemplate,
+	// boundary: document.getElementById('actions_slider').children[0]
 })
 
 $('#basket').mouseenter(
@@ -196,133 +230,28 @@ $('#basket').mouseenter(
   }
 )
 
+window.addEventListener('storage', function(e) {
+	data = data = JSON.parse(localStorage.getItem('cart'));
+	updateBasket();
+
+
+$('#basket').popover({
+	container: 'body',
+	content: 'hellooooooooooooo',
+	placement: 'bottom',
+	title: 'hello',
+	trigger: 'manual',
+	template: basketTemplate,
+	// boundary: document.getElementById('actions_slider').children[0]
+})
+});
+
 // $('.basket_delete').on('click', function(e) {
 // 	$(this).trigger('delete');
 // })
 // $('.basket_item').on('delete', function() {
-// 	console.log('Delete handling')
 // 	deleteItem(this);
 // })
 
 // -----------------BASKET END----------------------------
 
-
-// let basketItem =
-// `<div class="basket_item">
-//   <div class="row">
-//   <div class="col-4 basket_img">
-//     <img src="./assets/img/pizza_img.png" alt="">
-//   </div>
-//   <div class="col-8 basket_content container">
-//     <div class="row">
-//       <div class="col-10">
-//         <h3 class="basket_title">Барбекю</h3>
-//         <h5 class="basket_subtitle">Традиционное, 32 см</h5>
-//       </div>
-//       <div class="col-2 px-0 d-flex justify-content-center align-items-start">
-//         ${basketSvg}
-//       </div>
-//     </div>
-//     <div class="row mt-2">
-//       <div class="col-12">
-//         <div class="row">
-//           <div class="col-6 amount_container d-flex justify-content-start align-items-center">
-//             <div class="amount_changer">
-//               <span>–</span>
-//             </div>
-//             <h6 class="mx-1">1</h6>
-//             <div class="amount_changer">
-//               <span>+</span>
-//             </div>
-//           </div>
-//           <div class="col-6">
-//             <p class="basket_popover-price text-right">7,40 руб</p>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-//   </div>
-// </div>`;
-// let basketTemplate2 =
-// `<div class="container popover basket_popover">
-// <div class="arrow"></div>
-// <div class="basket_body">
-// <div class="basket_item">
-//   <div class="row">
-//   <div class="col-4 basket_img">
-//     <img src="./assets/img/pizza_img.png" alt="">
-//   </div>
-//   <div class="col-8 basket_content container">
-//     <div class="row">
-//       <div class="col-10">
-//         <h3 class="basket_title">Барбекю</h3>
-//         <h5 class="basket_subtitle">Традиционное, 32 см</h5>
-//       </div>
-//       <div class="col-2 px-0 d-flex justify-content-center align-items-start">
-//         ${basketSvg}
-//       </div>
-//     </div>
-//     <div class="row mt-2">
-//       <div class="col-12">
-//         <div class="row">
-//           <div class="col-6 amount_container d-flex justify-content-start align-items-center">
-//             <div class="amount_changer">
-//               <span>–</span>
-//             </div>
-//             <h6 class="mx-1">1</h6>
-//             <div class="amount_changer">
-//               <span>+</span>
-//             </div>
-//           </div>
-//           <div class="col-6">
-//             <p class="basket_popover-price text-right">7,40 руб</p>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-//   </div>
-// </div>
-// <div class="basket_item">
-//   <div class="row">
-//   <div class="col-4 basket_img">
-//     <img src="./assets/img/pizza_img.png" alt="">
-//   </div>
-//   <div class="col-8 basket_content container">
-//     <div class="row">
-//     <div class="col-10">
-//       <h3 class="basket_title">Барбекю</h3>
-//       <h5 class="basket_subtitle">Традиционное, 32 см</h5>
-//     </div>
-//     <div class="col-12"></div>
-//     </div>
-//     <div class="row"></div>
-//   </div>
-//   </div>
-// </div>
-// <div class="basket_item">
-//   <div class="row">
-//   <div class="col-4 basket_img">
-//     <img src="./assets/img/pizza_img.png" alt="">
-//   </div>
-//   <div class="col-8 basket_content container">
-//     <div class="row">
-//     <div class="col-10">
-//       <h3 class="basket_title">Барбекю</h3>
-//       <h5 class="basket_subtitle">Традиционное, 32 см</h5>
-//     </div>
-//     <div class="col-12"></div>
-//     </div>
-//     <div class="row"></div>
-//   </div>
-//   </div>
-// </div>
-// </div>
-// <div class="basket_footer">
-//   <div class="row">
-//   <div class="col-6">Сумма заказа</div>
-//   <div class="col-6 text-right">2,00 руб.</div>
-//   </div>
-// </div>
-// </div>`;

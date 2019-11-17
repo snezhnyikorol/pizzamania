@@ -4,6 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="vendor/toast/jquery.toast.min.css">
 		<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
 		<link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.css">
 		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -43,7 +44,7 @@
 			</div>
 		</header>
 
-		<nav>
+		<nav class="sticky fixed">
 			<div class="container d-lg-block d-none">
 				<div class="row">
 					<div class="col-lg-10 col-xl-9">
@@ -97,7 +98,6 @@
 			</div>
 		</nav>
 
-
 		<section id="actions_slider" class="d-md-block d-none">
 			<div class="container">
 				<div class="row">
@@ -107,7 +107,7 @@
 					</div>
 					<div class="col-12 d-flex justify-content-center align-items-center mt-4">
 						<div class="promocode_container">
-							<input class="promocode_input" type="" name="" placeholder="Введите промокод">
+							<input class="promocode_input" type="text" value="" name="" placeholder="Введите промокод">
 							<button class="promocode_button">Применить</button>
 						</div>
 					</div>
@@ -119,61 +119,61 @@
 		<section id="pizza">
 			<div class="container">
 				<div class="row">
-					<article class="col-lg-3 col-md-6 col-12 py-4 mt-lg-0 product_container">
+
+					<article class="col-lg-3 col-md-6 col-12 py-4 mt-lg-0 mt-3 product_container" data-id="1130см">
 						<div class="row">
 							<img class="pizza_img img-fluid align-self-baseline col-lg-12 col-sm-5" src="assets/img/pizza_img.png">
 							<div class="product_text-container col-lg-12 col-sm-7 mt-lg-4">
 								<h4>Барбекю</h3>
 								<p>Свинина маринованная, моцарелла, соус Барбекю, карамельный лук, томатный соус, перец маринованный, чесночное масло, орегано</p>
-								<div class="product_price-container d-flex justify-content-between align-items-center">
-									<h6>14,40 руб</h5>
-									<a href="" class="btn btn-primary" data-toggle="modal" data-target="#choseModal" data-name="Барбекю" data-id="11" data-price="14.40" data-priceAlt="20.50" data-img="assets/img/pizza_img.png">В корзину</a>
-								</div>
 							</div>
 						</div>
-
+						<div class="product_price-container d-flex justify-content-between align-items-center">
+							<h6>14,40 руб</h5>
+							<a href="" class="btn btn-primary" data-size="30см" data-target="cart" data-name="Барбекю" data-id="1130см" data-price="14.40" data-priceAlt="20.50" data-img="assets/img/pizza_img.png">В корзину</a>
+						</div>
 					</article>
-					<article class="col-lg-3 col-md-6 col-12 py-4 mt-lg-0 product_container">
+
+					<article class="col-lg-3 col-md-6 col-12 py-4 mt-lg-0 mt-3 product_container" data-id="1230см">
+							<div class="row">
+								<img class="pizza_img img-fluid align-self-baseline col-lg-12 col-sm-5" src="assets/img/pizza_img.png">
+								<div class="product_text-container col-lg-12 col-sm-7 mt-lg-4">
+									<h4>Барбекю</h3>
+									<p>Свинина маринованная, моцарелла, соус Барбекю, карамельный лук, томатный соус, перец маринованный, чесночное масло, орегано</p>
+								</div>
+							</div>
+							<div class="product_price-container d-flex justify-content-between align-items-center">
+								<h6>14,40 руб</h5>
+								<a href="" class="btn btn-primary" data-size="30см" data-target="cart" data-name="Барбекю" data-id="1230см" data-price="14.40" data-priceAlt="20.50" data-img="assets/img/pizza_img.png">В корзину</a>
+							</div>
+						</article>
+
+						<article class="col-lg-3 col-md-6 col-12 py-4 mt-lg-0 mt-3 product_container" data-id="1330см">
+								<div class="row">
+									<img class="pizza_img img-fluid align-self-baseline col-lg-12 col-sm-5" src="assets/img/pizza_img.png">
+									<div class="product_text-container col-lg-12 col-sm-7 mt-lg-4">
+										<h4>Барбекю</h3>
+										<p>Свинина маринованная, моцарелла, соус Барбекю, карамельный лук, томатный соус, перец маринованный, чесночное масло, орегано</p>
+									</div>
+								</div>
+								<div class="product_price-container d-flex justify-content-between align-items-center">
+									<h6>14,40 руб</h5>
+									<a href="" class="btn btn-primary" data-size="30см" data-target="cart" data-name="Барбекю" data-id="1330см" data-price="14.40" data-priceAlt="20.50" data-img="assets/img/pizza_img.png">В корзину</a>
+								</div>
+							</article>
+
+					<article class="col-lg-3 col-md-6 col-12 py-4 mt-lg-0 mt-3 product_container" data-id="1430см">
 						<div class="row">
 							<img class="pizza_img img-fluid align-self-baseline col-lg-12 col-sm-5" src="assets/img/pizza_img.png">
 							<div class="product_text-container col-lg-12 col-sm-7 mt-lg-4">
 								<h4>Барбекю</h3>
 								<p>Свинина маринованная, моцарелла, соус Барбекю, карамельный лук, томатный соус, перец маринованный, чесночное масло, орегано</p>
-								<div class="product_price-container d-flex justify-content-between align-items-center">
-									<h6>14,40 руб</h5>
-									<a href="" class="btn btn-primary" data-toggle="modal" data-target="#choseModal" data-name="Барбекю" data-id="12" data-price="14.40" data-priceAlt="20.50" data-img="assets/img/pizza_img.png">В корзину</a>
-								</div>
 							</div>
 						</div>
-
-					</article>
-					<article class="col-lg-3 col-md-6 col-12 py-4 mt-lg-0 product_container">
-						<div class="row">
-							<img class="pizza_img img-fluid align-self-baseline col-lg-12 col-sm-5" src="assets/img/pizza_img.png">
-							<div class="product_text-container col-lg-12 col-sm-7 mt-lg-4">
-								<h4>Барбекю</h3>
-								<p>Свинина маринованная, моцарелла, соус Барбекю, карамельный лук, томатный соус, перец маринованный, чесночное масло, орегано</p>
-								<div class="product_price-container d-flex justify-content-between align-items-center">
-									<h6>14,40 руб</h5>
-									<a href="" class="btn btn-primary" data-toggle="modal" data-target="#choseModal" data-name="Барбекю" data-id="13" data-price="14.40" data-priceAlt="20.50" data-img="assets/img/pizza_img.png">В корзину</a>
-								</div>
-							</div>
+						<div class="product_price-container d-flex justify-content-between align-items-center">
+							<h6>14,40 руб</h5>
+							<a href="" class="btn btn-primary" data-size="30см" data-target="cart" data-name="Барбекю" data-id="1430см" data-price="14.40" data-priceAlt="20.50" data-img="assets/img/pizza_img.png">В корзину</a>
 						</div>
-
-					</article>
-					<article class="col-lg-3 col-md-6 col-12 py-4 mt-lg-0 product_container">
-						<div class="row">
-							<img class="pizza_img img-fluid align-self-baseline col-lg-12 col-sm-5" src="assets/img/pizza_img.png">
-							<div class="product_text-container col-lg-12 col-sm-7 mt-lg-4">
-								<h4>Барбекю</h3>
-								<p>Свинина маринованная, моцарелла, соус Барбекю, карамельный лук, томатный соус, перец маринованный, чесночное масло, орегано</p>
-								<div class="product_price-container d-flex justify-content-between align-items-center">
-									<h6>14,40 руб</h5>
-									<a href="" class="btn btn-primary" data-toggle="modal" data-target="#choseModal" data-name="Барбекю" data-id="14" data-price="14.40" data-priceAlt="20.50" data-img="assets/img/pizza_img.png">В корзину</a>
-								</div>
-							</div>
-						</div>
-
 					</article>
 				</div>
 			</div>
@@ -206,7 +206,8 @@
 							<h6>Вес: <span id="currentWeight">0</span> гр</h6>
 							<h6>пищевая ценность</h6>
 						</div>
-						<p id="lunch_required" class="mb-4">Вы не выбрали обязательное блюдо для комплекта — гарнир, горячее.</p>
+						<div class="lunch_cart"></div>
+						<p id="lunch_required" class="mb-5">Вы не выбрали обязательное блюдо для комплекта — гарнир, горячее.</p>
 						<div class="product_price-container d-flex justify-content-lg-between justify-content-end align-items-center">
 							<h4><span id="currentPrice">0</span> руб</h4>
 							<a href="" class="lunch_basket btn btn-primary disabled">В корзину</a>
@@ -370,9 +371,15 @@
 								</article>
 							</div>
 						</div>
+						<div class="row step">
+							<div class="col d-flex flex-column justify-content-center align-items-center">
+								<h4>Обеденное меню собрано. Перейдите в корзину.</h4>
+								<a href="cart.html" id="" class="btn btn_basket mt-3">В корзину</a>
+							</div>
+						</div>
 							<div class="lunch_menu-control">
 								<a href="" id="back-button" class="btn btn-primary lunch_prev">Назад</a>
-								<a href="" id="next-button" class="btn btn-primary lunch_next ml-2 mr-0 mr-sm-3 mr-lg-0">Далее</a>
+								<a href="" id="next-button" class="btn btn-primary lunch_next ml-2 mr-0 mr-sm-3 mr-lg-0">Пропустить</a>
 							</div>
 					</div>
 				</div>
@@ -486,33 +493,10 @@
 				</div>
 
 
-		<!-- <article class="basket_tooltip">
-			<div class="container">
-				<div class="tooltip_container">
-					<div class="row">
-						<div class="col-3"><img src=""></div>
-						<div class="col-lg-7">
-							<h3></h3>
-						</div>
-						<div class="col-lg-2">
-							<img src="">
-						</div>
-						<hr>
-						<div class="col-lg-12">
-							<div class="d-flex justify-content-between align-items-center">
-								<p>Сумма заказа</p>
-								<p>0.00 руб</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</article> -->
-
 		<script type="text/javascript" src="vendor/jQuery/jquery.js"></script>
-		<!-- <script type="text/javascript" src="vendor/popper/popper.min.js"></script> -->
 		<script type="text/javascript" src='vendor/mask/jquery.maskedinput.min.js'></script>
 		<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.bundle.js"></script>
+		<script type="text/javascript" src="vendor/toast/jquery.toast.min.js"></script>
 		<script type="text/javascript" src="vendor/slick/slick.min.js"></script>
 		<script type="text/javascript" src="assets/js/logicCart.js"></script>
 		<script type="text/javascript" src="assets/js/basket.js"></script>
@@ -521,86 +505,3 @@
 
 	</body>
 </html>
-
-<!-- <div class="container popover">
-	<div class="arrow"></div>
-	<div class="basket_item">
-	  <div class="row">
-		<div class="col-3 basket_img">
-			<img src="./assets/img/pizza_img.png" alt="" class="img_fluid">
-		</div>
-		<div class="col-9 basket_content container">
-		  <div class="row">
-			<div class="col-10">
-			  <h3 class="basket_title">1</h3>
-			  <h5 class="basket_subtitle">2</h5>
-			</div>
-			<div class="col-12"></div>
-		  </div>
-		  <div class="row"></div>
-		</div>
-	  </div>
-	</div>
-	<div class="basket_item">
-	  <div class="row">
-		<div class="col-3 basket_img">
-			<img src="./assets/img/pizza_img.png" alt="" class="img_fluid">
-		</div>
-		<div class="col-9 basket_content container">
-		  <div class="row">
-			<div class="col-10">
-			  <h3 class="basket_title">1</h3>
-			  <h5 class="basket_subtitle">2</h5>
-			</div>
-			<div class="col-12"></div>
-		  </div>
-		  <div class="row"></div>
-		</div>
-	  </div>
-	</div>
-	<div class="basket_item">
-	  <div class="row">
-		<div class="col-3 basket_img">
-			<img src="./assets/img/pizza_img.png" alt="" class="img_fluid">
-		</div>
-		<div class="col-9 basket_content container">
-		  <div class="row">
-			<div class="col-10">
-			  <h3 class="basket_title">1</h3>
-			  <h5 class="basket_subtitle">2</h5>
-			</div>
-			<div class="col-12"></div>
-		  </div>
-		  <div class="row"></div>
-		</div>
-	  </div>
-	</div>
-	<div class="basket_footer">
-	  <div class="row">
-		<div class="col-6">Сумма заказа</div>
-		<div class="col-6">2,00 руб.</div>
-	  </div>
-	</div>
-	</div> -->
-
-
-
-					<!--<div class="tooltip_content">
-						<h6>Пищевая ценность на 100г</h6>
-						<div class="tooltip_content-container">
-							<p>Энерг. ценность</p>
-							<p>214,3 ккал</p>
-						</div>
-						<div class="tooltip_content-container">
-							<p>Энерг. ценность</p>
-							<p>214,3 ккал</p>
-						</div>
-						<div class="tooltip_content-container">
-							<p>Энерг. ценность</p>
-							<p>214,3 ккал</p>
-						</div>
-						<div class="tooltip_content-container">
-							<p>Энерг. ценность</p>
-							<p>214,3 ккал</p>
-						</div>
-					</div>-->
