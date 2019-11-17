@@ -196,7 +196,7 @@ $('[data-target="cart"]').click(function (event) {
 	cart.addItem({
 		image : $(this).data('img'),
 		name : $(this).data('name'),
-		size : '30см',
+		size : $(this).data('size'),
 		price : $(this).data('price'),
 		count :	1,
 		id : $(this).data('id'),
@@ -230,10 +230,14 @@ $('.promocode_button').click(function(e) {
 	e.preventDefault();
   let form_data = $('.promocode_input').val();
   let url;
-  let posting = $.post(url, form_data);
-  posting.done(function(data) {
 
-	})
+	$.ajax({
+		type: '',
+		url: url,
+		data: form_data,
+		success: success,
+		dataType: ''
+	});
 	if (true) {
 		$('.promocode_input').popover({
 			container: 'body',
@@ -264,7 +268,7 @@ function showToast(name) {
 			stack: 2, // false if there should be only one toast at a time or a number representing the maximum number of toasts to be shown at a time
 			position: {
 				top: 70,
-				left: $('#basket').offset().left - 150,
+				left: $('#basketContainer').offset().left - 250 + $('#basketContainer').outerWidth(),
 			}, // bottom-left or bottom-right or bottom-center or top-left or top-right or top-center or mid-center or an object representing the left, right, top, bottom values
 
 			bgColor: '#444444',  // Background color of the toast
@@ -319,10 +323,7 @@ function decrease(id) {
 		let priceContainer = $(productContainer).find('.product_price-container');
 		$(priceContainer).find('.counter').remove()
 		$(priceContainer).find('h6').after(`<a href="" class="btn btn-primary" data-size="${item.size}" data-target="cart" data-name="${item.name}" data-id="${item.id}" data-price="${item.price}" data-img="${item.image}">В корзину</a>`);
-	a = $('[data-target="cart"]')
-	b=item.id
-		console.log(a)
-		$('[data-target="cart"]').filter(`[data-id=${item.id}]`).click(function (event) { //ПЕРЕДЕЛАТЬ БЛЯТЬ
+		$('[data-target="cart"]').filter(`[data-id=${item.id}]`).click(function (event) {
 			event.preventDefault();
 			cart.addItem({
 				image : $(this).data('img'),
