@@ -130,7 +130,11 @@ window.addEventListener('storage', function(e) {
 	updateBasket();
 })
 
+let lastResStreet = {};
+let lastResBuilding = {};
+
 $('[name="street"]').on('input', function(e) {
+	$('.warning').addClass('closed');
 	$('[name="building"]').attr('disabled', 'disabled');
 	$('[name="building"]').val('')
 	url = 'data.json'
@@ -149,6 +153,7 @@ $('[name="street"]').on('input', function(e) {
 })
 
 function streetSuccess(data) {
+	lastResStreet = data;
 	$('#inputStreetWrapper').removeClass('closed');
 	$('#inputStreetWrapper').html('');
 	for (const id in data) {
@@ -184,6 +189,7 @@ $('[name="street"]').on('blur', function (event) {
 $('[name="building"]').on('input', function(e) {
 	// $('[name="building"]').attr('disabled', 'disabled');
 	// $('[name="building"]').val('')
+	$('.warning').addClass('closed');
 	url = 'data2.json'
 		$.ajax({
 			type: 'GET',
@@ -198,6 +204,7 @@ $('[name="building"]').on('input', function(e) {
 })
 
 function buildingSuccess(data) {
+	lastResBuilding = data;
 	$('#inputBuildingWrapper').removeClass('closed');
 	$('#inputBuildingWrapper').html('');
 	for (const id in data) {
@@ -226,4 +233,23 @@ function buildingItem(name) {
 
 $('[name="building"]').on('blur', function (event) {
 	// $('#inputStreetWrapper').addClass('closed');
+})
+
+$('[data-target="#phoneModal"]').click(function (e) {
+	e.preventDefault();
+	$('[name="street"]');
+	$('[name="building"]');
+	let isCorrectStreet = Object.values(lastResStreet).includes($('[name="street"]').val());
+	let isCorrectBuilding = Object.values(lastResBuilding).includes($('[name="building"]').val());
+
+
+
+	// console.log(	 lastResStreet, lastResBuilding);
+	if (isCorrectStreet && isCorrectBuilding) {
+		$('#phoneModal').modal('show');
+	} else {
+		$('.warning').removeClass('closed');
+		console.log('wtf');
+	}
+
 })

@@ -1137,6 +1137,10 @@ footer * {
 	font-family: 'Rounded Mplus 1c';
 }
 
+.cart_modal-input:focus {
+	border: 1px solid #ff6900;
+}
+
 .cart_modal-textarea {
 	display: block;
     border-radius: 8px;
@@ -1158,6 +1162,10 @@ footer * {
     transition: border-color .2s ease;
 	font-family: 'Rounded Mplus 1c';
 	resize: none;
+}
+
+.cart_modal-textarea:focus {
+	border: 1px solid #ff6900;
 }
 
 .input_home {
@@ -1488,7 +1496,7 @@ input::-webkit-inner-spin-button {
 		font-size: 1.4rem;
 	}
 
-	
+
 }
 
 @media (max-width: 479px) {
@@ -1737,5 +1745,13 @@ header {
 }
 
 #inputStreetWrapper.closed, #inputBuildingWrapper.closed {
+	display: none;
+}
+
+.warning {
+	color: red;
+}
+
+.warning.closed {
 	display: none;
 }
