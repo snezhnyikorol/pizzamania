@@ -62,7 +62,7 @@
 									<a class="nav_item" href="about.html">О нас</a>
 								</div>
 							</div>
-							<div class="col-lg-2 col-xl-3 d-flex justify-content-end align-items-center" id="basketContainer">
+							<div class="col-lg-2 col-xl-3 d-flex justify-content-end align-items-center">
 								<!-- <a href="cart.html" id="basket" class="btn btn_basket">Корзина</a> -->
 							</div>
 						</div>
@@ -115,13 +115,13 @@
 							<img class="img-fluid" src="https://dodopizza-a.akamaihd.net/static/Img/Products/Sauces/ru-RU/cb8e92ef-c963-4ebe-991a-a5af75b1037a.jpg">
 							<h6 class="">Сырный</h6>
 							<h6 class="mt-2">0,70 руб.</h6>
-							<a class="btn btn-primary mt-2" data-target="cart" data-name="Сырный" data-id="s1" data-price="0.70" data-img="https://dodopizza-a.akamaihd.net/static/Img/Products/Sauces/ru-RU/cb8e92ef-c963-4ebe-991a-a5af75b1037a.jpg" href="">В корзину</a>
+							<a class="btn btn-primary mt-2" data-name="Сырный" data-id="s1" data-price="0.70" data-image="https://dodopizza-a.akamaihd.net/static/Img/Products/Sauces/ru-RU/cb8e92ef-c963-4ebe-991a-a5af75b1037a.jpg" href="">В корзину</a>
 						</div>
 						<div class="col-md-3 col-6">
 							<img class="img-fluid" src="https://dodopizza-a.akamaihd.net/static/Img/Products/Sauces/ru-RU/cb8e92ef-c963-4ebe-991a-a5af75b1037a.jpg">
 							<h6 class="">Сырный</h6>
 							<h6 class="mt-2">0,70 руб.</h6>
-							<a class="btn btn-primary mt-2" data-target="cart" data-name="Сырный" data-id="s2" data-price="0.70" data-img="https://dodopizza-a.akamaihd.net/static/Img/Products/Sauces/ru-RU/cb8e92ef-c963-4ebe-991a-a5af75b1037a.jpg" href="">В корзину</a>
+							<a class="btn btn-primary mt-2" data-name="Сырный" data-id="s2" data-price="0.70" data-image="https://dodopizza-a.akamaihd.net/static/Img/Products/Sauces/ru-RU/cb8e92ef-c963-4ebe-991a-a5af75b1037a.jpg" href="">В корзину</a>
 						</div>
 					</div>
 				</div>
@@ -197,34 +197,23 @@
 					<div class="tab-content" id="nav-tabContent">
 						<div class="tab-pane fade show active col-12" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 								<div class="row">
-									<div class="col-lg-9 cart_modal-col list_wrapper">
-										<input class="cart_modal-input" type="text" name="street" placeholder="Улица">
-										<div id="inputStreetWrapper" class="closed">
-
-										</div>
+									<div class="col-lg-9 cart_modal-col">
+										<input class="cart_modal-input" type="text" name="" placeholder="Улица">
 									</div>
-<<<<<<< HEAD
 									<div class="col-lg-3 cart_modal-col">
 										<input class="cart_modal-input" type="text" name="" placeholder="Дом">
-=======
-									<div class="col-lg-3 cart_modal-col list_wrapper">
-										<input class="cart_modal-input input_home" disabled type="text" name="building" placeholder="Дом">
-										<div id="inputBuildingWrapper" class="closed">
-
-										</div>
->>>>>>> 990b4a491161715b85031870fec35c51cefa16e8
 									</div>
 									<div class="col-lg-3 cart_modal-col">
-										<input class="cart_modal-input" type="number" name="apartment" placeholder="Квартира">
+										<input class="cart_modal-input" type="number" name="" placeholder="Квартира">
 									</div>
 									<div class="col-lg-3 cart_modal-col">
-										<input class="cart_modal-input" type="number" name="porch" placeholder="Подъезд">
+										<input class="cart_modal-input" type="number" name="" placeholder="Подъезд">
 									</div>
 									<div class="col-lg-3 cart_modal-col">
-										<input class="cart_modal-input" type="number" name="code" placeholder="Код двери">
+										<input class="cart_modal-input" type="number" name="" placeholder="Код двери">
 									</div>
 									<div class="col-lg-3 cart_modal-col">
-										<input class="cart_modal-input" type="number" name="floor" placeholder="Этаж">
+										<input class="cart_modal-input" type="number" name="" placeholder="Этаж">
 									</div>
 									<div class="col-12 cart_modal-col">
 											<textarea class="cart_modal-textarea" name="text" maxlength="254" rows="3" placeholder="Комментарий" required></textarea>
@@ -241,7 +230,7 @@
 											<p class="radio__text">Barcelona</p>
 											<div class="radio_text-container">
 												<p>Минск, Рафиева, 44</p>
-												<a href="">+375(44)5537000</a>
+												<a href="tel:+375(44)5537000">+375(44)5537000</a>
 												<p>пн-пт 12:00-23:00<br>сб-вс 11:00-23:00</p>
 											</div>
 										</label>
@@ -250,6 +239,55 @@
 										<label class="radio">
 											<input type="radio" name="radio" required="">
 											<p class="radio__text">London</p>
+											<div class="radio_text-container">
+												<p>Минск, Ванеева, 28</p>
+												<a href="tel:+375(44)5530000">+375(44)5530000</a>
+												<p>10:00-23:00</p>
+											</div>
+										</label>
+									</div>
+									<div class="col-lg-6 cart_modal-container">
+										<label class="radio">
+											<input type="radio" name="radio" required="">
+											<p class="radio__text">Napoli</p>
+											<div class="radio_text-container">
+												<p>Минск, Маяковского, 10</p>
+												<a href="tel:+375(17)3936213">+375(17)3936213</a>
+												<p>10:00-23:00</p>
+											</div>
+										</label>
+									</div>
+									<div class="col-lg-6 cart_modal-container">
+										<label class="radio">
+											<input type="radio" name="radio" required="">
+											<p class="radio__text">Amsterdam</p>
+											<div class="radio_text-container">
+												<p>Минск, Чкалова, 12</p>
+												<a href="tel:+375(44)5535000">+375(44)5535000</a>
+												<p>11:00-24:00</p>
+											</div>
+										</label>
+									</div>
+									<div class="col-lg-6 cart_modal-container">
+										<label class="radio">
+											<input type="radio" name="radio" required="">
+											<p class="radio__text">М.З.Л.</p>
+											<div class="radio_text-container">
+												<p>Минск, Я. Коласа, 38</p>
+												<a href="tel:+375(44)5536000">+375(44)5536000</a>
+												<p>10:00-23:00</p>
+											</div>
+										</label>
+									</div>
+									<div class="col-lg-6 cart_modal-container">
+										<label class="radio">
+											<input type="radio" name="radio" required="">
+											<p class="radio__text">Tokyo</p>
+											<div class="radio_text-container">
+												<p>Минск, Центральная, 9</p>
+												<a href="tel:++375(44)5534000">+375(44)5534000</a>
+												<p>10:00-23:00</p>
+											</div>
 										</label>
 									</div>
 									<a class="btn btn_basket ml-2 mt-4" data-toggle="modal" data-target="#phoneModal" href="">Выбрать</a>
@@ -298,7 +336,6 @@
 		<!-- <script type="text/javascript" src="vendor/bootstrap/js/bootstrap.min.js"></script> -->
 		<script type="text/javascript" src='vendor/mask/jquery.maskedinput.min.js'></script>
 		<script type="text/javascript" src="vendor/bootstrap/js/bootstrap.bundle.js"></script>
-		<script type="text/javascript" src="vendor/toast/jquery.toast.min.js"></script>
 		<script type="text/javascript" src="vendor/slick/slick.min.js"></script>
 		<script type="text/javascript" src="assets/js/logicCart.js"></script>
 		<!-- <script type="text/javascript" src="assets/js/basket.js"></script> -->
