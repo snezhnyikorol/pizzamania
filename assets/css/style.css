@@ -1475,6 +1475,20 @@ input::-webkit-inner-spin-button {
 	.about_container .section_title {
 		font-size: 2.5rem;
 	}
+
+	.cart_modal h1 {
+		font-size: 1.8rem;
+	}
+
+	.cart_modal .nav-tabs .nav-item {
+		font-size: 1rem;
+	}
+
+	.cart_cost span {
+		font-size: 1.4rem;
+	}
+
+	
 }
 
 @media (max-width: 479px) {
@@ -1526,6 +1540,10 @@ input::-webkit-inner-spin-button {
 
 	#saladWrapper, #soupWrapper {
     height: calc(135px * 0.9);
+	}
+
+	.cart_btn-container  .btn_basket {
+		padding: 7px 14px;
 	}
 }
 
