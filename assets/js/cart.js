@@ -241,7 +241,6 @@ $('[data-target="#phoneModal"]').click(function (e) {
 
 
 
-
 	if (isCorrectStreet && isCorrectBuilding) {
 		$('#phoneModal').modal('show');
 	} else {
