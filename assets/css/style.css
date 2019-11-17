@@ -1173,6 +1173,13 @@ footer * {
 	border: 1px solid rgba(135,134,134,.15);
 }
 
+input:disabled {
+	color: #aaa;
+	border: 1px solid #f8f7f7;
+	background-color: #f8f7f7;
+	cursor: not-allowed;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
@@ -1402,6 +1409,10 @@ input::-webkit-inner-spin-button {
 
 	.footer_info {
 		margin-top: 30px;
+	}
+
+	.cart_price {
+		font-size: 20px;
 	}
 }
 

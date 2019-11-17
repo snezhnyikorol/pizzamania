@@ -80,7 +80,6 @@ function deleteItem(id) {
 	cart.deleteItemById(id);
 	$('#totalPrice').text(data.price.toString().replace('.', ','))
 	$(item).remove();
-	// updateBasket();//wtf
 	if (data.count == 0) {
 		$('.cart_list').html(`
 			<div class="row"><div class="col text-center"><h3>Корзина пуста</h3></div></div>
@@ -137,7 +136,7 @@ $('[name="street"]').on('input', function(e) {
 	$('.warning').addClass('closed');
 	$('[name="building"]').attr('disabled', 'disabled');
 	$('[name="building"]').val('')
-	url = 'data.json'
+	url = ''
 	if ($(this).val().length > 1) {
 		$.ajax({
 			type: 'GET',
@@ -187,10 +186,8 @@ $('[name="street"]').on('blur', function (event) {
 
 
 $('[name="building"]').on('input', function(e) {
-	// $('[name="building"]').attr('disabled', 'disabled');
-	// $('[name="building"]').val('')
 	$('.warning').addClass('closed');
-	url = 'data2.json'
+	url = ''
 		$.ajax({
 			type: 'GET',
 			url: url,
@@ -225,7 +222,7 @@ function buildingItem(name) {
 			click: function () {
 				$('#inputBuildingWrapper').addClass('closed')
 				$('[name="building"]').val(name);
-				// $('[name="building"]').removeAttr('disabled', 'disabled');
+
 			}
 		}
 	})
@@ -244,7 +241,7 @@ $('[data-target="#phoneModal"]').click(function (e) {
 
 
 
-	// console.log(	 lastResStreet, lastResBuilding);
+
 	if (isCorrectStreet && isCorrectBuilding) {
 		$('#phoneModal').modal('show');
 	} else {
