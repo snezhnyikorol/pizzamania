@@ -5,7 +5,7 @@ let drink = `
 	<div class="col-8 col-sm-6 order-1 product_text-container">
 		<h5>Вы забыли добавить напиток.<br>Желаете выбрать?</h5>
 	</div>
-	<div class="col-4 col-sm-5 offset-sm-2 col-sm-3 d-flex align-items-center justify-content-sm-start justify-content-end order-2 order-sm-3">
+	<div class="col-4 offset-sm-3 col-sm-3 d-flex align-items-center justify-content-sm-start justify-content-end order-2 order-sm-3">
 		<h4 class="cart_price"><a class="btn btn-primary mt-2" href="index.html#drinks">Выбрать</a></h4>
 	</div>
 </div>`

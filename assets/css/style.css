@@ -1160,11 +1160,6 @@ footer * {
 	resize: none;
 }
 
-.input_home {
-	background-color: rgba(135,134,134,.15);
-	border: 1px solid rgba(135,134,134,.15);
-}
-
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     /* display: none; <- Crashes Chrome on hover */
@@ -1394,6 +1389,10 @@ input::-webkit-inner-spin-button {
 
 	.footer_info {
 		margin-top: 30px;
+	}
+
+	.cart_price {
+		font-size: 20px;
 	}
 }
 
