@@ -105,6 +105,9 @@ function updateBasket() {
 		$('.cart_list').html(`
 			<div class="row"><div class="col text-center"><h3>Корзина пуста</h3></div></div>
 		`);
+		$('[data-target="#orderModal"]').addClass('disabled');
+	} else {
+		$('[data-target="#orderModal"]').removeClass('disabled');
 	}
 	$('#totalPrice').text(data.price.toString().replace('.', ','));
 }
@@ -125,4 +128,102 @@ $('.cart_souces').find('.btn_basket').click(function(e) {
 
 window.addEventListener('storage', function(e) {
 	updateBasket();
+})
+
+$('[name="street"]').on('input', function(e) {
+	$('[name="building"]').attr('disabled', 'disabled');
+	$('[name="building"]').val('')
+	url = 'data.json'
+	if ($(this).val().length > 1) {
+		$.ajax({
+			type: 'GET',
+			url: url,
+			data: {
+				'name': $(this).val(),
+			},
+			success: streetSuccess,
+			dataType: 'json'
+		});
+	}
+
+})
+
+function streetSuccess(data) {
+	$('#inputStreetWrapper').removeClass('closed');
+	$('#inputStreetWrapper').html('');
+	for (const id in data) {
+		if ($('[name="street"]').val() == data[id]) {
+		}
+		if (data.hasOwnProperty(id)) {
+			const name = data[id];
+
+			$('#inputStreetWrapper').append(streetItem(name));
+		}
+	}
+}
+
+function streetItem(name) {
+	return $('<div/>', {
+		text: name,
+		on:{
+			click: function () {
+				$('#inputStreetWrapper').addClass('closed')
+				$('[name="street"]').val(name);
+				$('[name="building"]').removeAttr('disabled', 'disabled');
+			}
+		}
+	})
+}
+
+$('[name="street"]').on('blur', function (event) {
+	// $('#inputStreetWrapper').addClass('closed');
+})
+
+
+
+$('[name="building"]').on('input', function(e) {
+	// $('[name="building"]').attr('disabled', 'disabled');
+	// $('[name="building"]').val('')
+	url = 'data2.json'
+		$.ajax({
+			type: 'GET',
+			url: url,
+			data: {
+				'name': $(this).val(),
+			},
+			success: buildingSuccess,
+			dataType: 'json'
+		});
+
+})
+
+function buildingSuccess(data) {
+	$('#inputBuildingWrapper').removeClass('closed');
+	$('#inputBuildingWrapper').html('');
+	for (const id in data) {
+		if ($('[name="building"]').val() == data[id]) {
+		}
+		if (data.hasOwnProperty(id)) {
+			const name = data[id];
+
+			$('#inputBuildingWrapper').append(buildingItem(name));
+		}
+	}
+}
+
+function buildingItem(name) {
+	return $('<div/>', {
+		text: name,
+		on:{
+			click: function () {
+				$('#inputBuildingWrapper').addClass('closed')
+				$('[name="building"]').val(name);
+				// $('[name="building"]').removeAttr('disabled', 'disabled');
+			}
+		}
+	})
+}
+
+$('[name="building"]').on('blur', function (event) {
+	// $('#inputStreetWrapper').addClass('closed');
 })
