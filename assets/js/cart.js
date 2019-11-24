@@ -80,7 +80,6 @@ function deleteItem(id) {
 	cart.deleteItemById(id);
 	$('#totalPrice').text(data.price.toString().replace('.', ','))
 	$(item).remove();
-	// updateBasket();//wtf
 	if (data.count == 0) {
 		$('.cart_list').html(`
 			<div class="row"><div class="col text-center"><h3>Корзина пуста</h3></div></div>
@@ -130,10 +129,14 @@ window.addEventListener('storage', function(e) {
 	updateBasket();
 })
 
+let lastResStreet = {};
+let lastResBuilding = {};
+
 $('[name="street"]').on('input', function(e) {
+	$('.warning').addClass('closed');
 	$('[name="building"]').attr('disabled', 'disabled');
 	$('[name="building"]').val('')
-	url = 'data.json'
+	url = ''
 	if ($(this).val().length > 1) {
 		$.ajax({
 			type: 'GET',
@@ -149,6 +152,7 @@ $('[name="street"]').on('input', function(e) {
 })
 
 function streetSuccess(data) {
+	lastResStreet = data;
 	$('#inputStreetWrapper').removeClass('closed');
 	$('#inputStreetWrapper').html('');
 	for (const id in data) {
@@ -182,9 +186,8 @@ $('[name="street"]').on('blur', function (event) {
 
 
 $('[name="building"]').on('input', function(e) {
-	// $('[name="building"]').attr('disabled', 'disabled');
-	// $('[name="building"]').val('')
-	url = 'data2.json'
+	$('.warning').addClass('closed');
+	url = ''
 		$.ajax({
 			type: 'GET',
 			url: url,
@@ -198,6 +201,7 @@ $('[name="building"]').on('input', function(e) {
 })
 
 function buildingSuccess(data) {
+	lastResBuilding = data;
 	$('#inputBuildingWrapper').removeClass('closed');
 	$('#inputBuildingWrapper').html('');
 	for (const id in data) {
@@ -218,7 +222,7 @@ function buildingItem(name) {
 			click: function () {
 				$('#inputBuildingWrapper').addClass('closed')
 				$('[name="building"]').val(name);
-				// $('[name="building"]').removeAttr('disabled', 'disabled');
+
 			}
 		}
 	})
@@ -226,4 +230,22 @@ function buildingItem(name) {
 
 $('[name="building"]').on('blur', function (event) {
 	// $('#inputStreetWrapper').addClass('closed');
+})
+
+$('[data-target="#phoneModal"]').click(function (e) {
+	e.preventDefault();
+	$('[name="street"]');
+	$('[name="building"]');
+	let isCorrectStreet = Object.values(lastResStreet).includes($('[name="street"]').val());
+	let isCorrectBuilding = Object.values(lastResBuilding).includes($('[name="building"]').val());
+
+
+
+	if (isCorrectStreet && isCorrectBuilding) {
+		$('#phoneModal').modal('show');
+	} else {
+		$('.warning').removeClass('closed');
+		console.log('wtf');
+	}
+
 })
